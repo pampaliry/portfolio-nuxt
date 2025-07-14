@@ -5,7 +5,7 @@
         <v-card class="pa-6">
           <v-card-title>Moje Projekty</v-card-title>
           <v-card-text>
-            Sem budú tvojé projektové ukážky (napr. Gym rezervácie).
+            <a href="http://www.umy-ma.sk" target="_blank">umy-ma.sk</a>
           </v-card-text>
         </v-card>
       </v-col>
