@@ -13,13 +13,20 @@ import 'ipx';
 import 'node:path';
 
 const sendContact = defineEventHandler(async (event) => {
+  if (event.method !== "POST") {
+    return {
+      statusCode: 405,
+      statusMessage: "Method Not Allowed",
+      success: false,
+      error: "Only POST requests are allowed"
+    };
+  }
   const body = await readBody(event);
   if (!body.name || !body.email || !body.message) {
     return { success: false, error: "Missing fields" };
   }
   const transporter = nodemailer.createTransport({
     service: "gmail",
-    // alebo smtp provider (zoznam nižšie)
     auth: {
       user: process.env.MAIL_USER,
       pass: process.env.MAIL_PASS
