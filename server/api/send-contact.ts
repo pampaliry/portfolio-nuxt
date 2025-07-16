@@ -1,17 +1,10 @@
 import { defineEventHandler, readBody } from 'h3';
+import { useRuntimeConfig } from '#imports';
 import nodemailer from 'nodemailer';
 
 export default defineEventHandler(async (event) => {
-  if (event.method !== 'POST') {
-    return {
-      statusCode: 405,
-      statusMessage: 'Method Not Allowed',
-      success: false,
-      error: 'Only POST requests are allowed',
-    };
-  }
-
   const body = await readBody(event);
+  const config = useRuntimeConfig();
 
   if (!body.name || !body.email || !body.message) {
     return { success: false, error: 'Missing fields' };
@@ -20,15 +13,15 @@ export default defineEventHandler(async (event) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: process.env.MAIL_USER,
-      pass: process.env.MAIL_PASS,
+      user: config.mailUser,
+      pass: config.mailPass,
     },
   });
 
   try {
     await transporter.sendMail({
       from: `"${body.name}" <${body.email}>`,
-      to: process.env.MAIL_TO,
+      to: config.mailTo,
       subject: 'Správa z kontaktného formulára',
       text: body.message,
     });

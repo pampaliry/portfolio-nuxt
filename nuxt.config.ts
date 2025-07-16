@@ -3,6 +3,13 @@ import { defineNuxtConfig } from 'nuxt/config';
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
 
 export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {},
+    mailUser: process.env.MAIL_USER,
+    mailPass: process.env.MAIL_PASS,
+    mailTo: process.env.MAIL_TO,
+  },
+
   devtools: { enabled: false },
 
   css: ['vuetify/styles', '@mdi/font/css/materialdesignicons.css'],
