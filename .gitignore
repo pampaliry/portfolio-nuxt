@@ -4,7 +4,7 @@
 # ✅ Výnimky, ktoré sa majú sledovať v Gite:
 !.output/
 !.output/**
-!.output/node_modules
+!.output/server/node_modules
 
 !ecosystem.config.js
 !.env.example
@@ -30,3 +30,10 @@ coverage/
 .idea/
 *.log
 ecosystem.config.js
+components
+layouts/
+pages/
+plugins/
+public/
+server/
+
