@@ -2,6 +2,15 @@ import { defineEventHandler, readBody } from 'h3';
 import nodemailer from 'nodemailer';
 
 export default defineEventHandler(async (event) => {
+  if (event.method !== 'POST') {
+    return {
+      statusCode: 405,
+      statusMessage: 'Method Not Allowed',
+      success: false,
+      error: 'Only POST requests are allowed',
+    };
+  }
+
   const body = await readBody(event);
 
   if (!body.name || !body.email || !body.message) {
@@ -9,7 +18,7 @@ export default defineEventHandler(async (event) => {
   }
 
   const transporter = nodemailer.createTransport({
-    service: 'gmail', // alebo smtp provider (zoznam nižšie)
+    service: 'gmail',
     auth: {
       user: process.env.MAIL_USER,
       pass: process.env.MAIL_PASS,
