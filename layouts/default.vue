@@ -4,7 +4,7 @@
       <v-container>
         <v-row align="center" no-gutters>
           <v-col>
-            <v-toolbar-title>Moje Portfólio</v-toolbar-title>
+            <v-toolbar-title><LogoRotate /></v-toolbar-title>
           </v-col>
           <v-col class="text-end">
             <v-btn
