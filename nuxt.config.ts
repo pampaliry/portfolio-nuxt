@@ -12,7 +12,11 @@ export default defineNuxtConfig({
 
   devtools: { enabled: false },
 
-  css: ['vuetify/styles', '@mdi/font/css/materialdesignicons.css'],
+  css: [
+    'vuetify/styles',
+    '@mdi/font/css/materialdesignicons.css',
+    '@/assets/styles/main.scss',
+  ],
 
   build: {
     transpile: ['vuetify'],

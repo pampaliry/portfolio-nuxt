@@ -52,7 +52,7 @@ const submitForm = async () => {
           <v-text-field v-model="form.name" label="Meno" required />
           <v-text-field v-model="form.email" label="Email" required type="email" />
           <v-textarea v-model="form.message" label="Správa" rows="4" />
-          <v-btn :loading="loading" color="primary" class="mt-4" type="submit">
+          <v-btn :loading="loading" color="secondary" class="mt-4" type="submit">
             Odoslať
           </v-btn>
 

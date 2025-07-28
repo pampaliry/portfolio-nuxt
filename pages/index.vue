@@ -99,4 +99,9 @@ import HandWave from '~/components/HandWave.vue'
   word-break: break-word;
   white-space: normal;
 }
+.v-card-subtitle {
+  white-space: normal;
+  overflow: visible;
+  font-size: clamp(0.9rem, 2.5vw, 1.25rem) ;
+}
 </style>
