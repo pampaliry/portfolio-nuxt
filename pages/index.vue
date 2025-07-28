@@ -9,9 +9,13 @@ import HandWave from '~/components/HandWave.vue'
       <v-row justify="center">
         <v-col cols="12" md="8">
           <v-card class="pa-8" elevation="10" tag="article">
-            <v-card-title class="text-h3 text-center font-weight-bold">
-              <HandWave /> <h1 class="text-h3 d-inline-block">Vitaj na mm-smart.eu</h1>
+            <v-card-title class="text-center font-weight-bold d-flex justify-center align-center flex-wrap">
+              <span class="d-inline-flex align-center">
+                <HandWave style="font-size: 1.5rem; margin-right: 0.5rem;" />
+                <h1 class="hero-heading">Vitaj na mm-smart.eu</h1>
+              </span>
             </v-card-title>
+
             <v-card-subtitle class="text-center text-grey mt-2">
               Portfolio s reálnym backendom, nasadením a plne responzívnym UI
             </v-card-subtitle>
@@ -19,19 +23,19 @@ import HandWave from '~/components/HandWave.vue'
             <v-card-text class="text-body-1 text-center mt-8">
               <div class="text-justify" style="line-height: 1.8">
                 Tento projekt vznikol ako reakcia na pracovnú ponuku pre Vue/Nuxt frontend vývojára. 
-                Namiesto tradičného životopisu som sa rozhodol ukázať reálne riešenie – **nasadenú aplikáciu**, ktorá beží na mojom vlastnom serveri 
+                Namiesto tradičného životopisu som sa rozhodol ukázať reálne riešenie – <strong>nasadenú aplikáciu</strong>, ktorá beží na mojom vlastnom serveri 
                 (Debian + PM2 + Nginx + Git cron deploy), presne tak, ako by fungovala živá firemná prezentácia.
 
                 <br /><br />
 
-                Mám predchádzajúcu prax ako frontend vývojár v spoločnosti **Railsformers (2022)**, kde som jeden rok vytváral šablóny v HTML/PHP pre firemné CMS. 
-                Pracoval som **desktop-first**, používal **Bootstrap**, riešil základy **technického SEO**, jednoduché animácie a základný **deploy**. 
-                Dnes sa aktívne posúvam k plnému **fullstack vývoju**, zameranému na **moderný Vue/Nuxt ekosystém**, kde pracujem s komponentovým prístupom, TypeScriptom a DevOps nástrojmi.
+                Mám predchádzajúcu prax ako frontend vývojár v spoločnosti <strong>Railsformers (2022)</strong>, kde som jeden rok vytváral šablóny v HTML/PHP pre firemné CMS. 
+                Pracoval som <strong>desktop-first</strong>, používal <strong>Bootstrap</strong>, riešil základy <strong>technického SEO</strong>, jednoduché animácie a základný <strong>deploy</strong>. 
+                Dnes sa aktívne posúvam k plnému <strong>fullstack vývoju</strong>, zameranému na <strong>moderný Vue/Nuxt ekosystém</strong>, kde pracujem s komponentovým prístupom, TypeScriptom a DevOps nástrojmi.
 
                 <br /><br />
 
-                Popri webových projektoch rozvíjam aj vlastné technické experimenty, napr. **ESP32-Smarwi Controller** – systém pre inteligentné vetranie založený na DHT senzore, OTA aktualizáciách, HTTP API a backendom v AdonisJS. 
-                Kvôli väčšej škálovateľnosti som prešiel z Arduino IDE na **PlatformIO** v prostredí VS Code.
+                Popri webových projektoch rozvíjam aj vlastné technické experimenty, napr. <strong>ESP32-Smarwi Controller</strong> – systém pre inteligentné vetranie založený na DHT senzore, OTA aktualizáciách, HTTP API a backendom v AdonisJS. 
+                Kvôli väčšej škálovateľnosti som prešiel z Arduino IDE na <strong>PlatformIO</strong> v prostredí VS Code.
 
                 <br /><br />
 
@@ -87,3 +91,12 @@ import HandWave from '~/components/HandWave.vue'
     </section>
   </v-container>
 </template>
+
+<style scoped>
+.hero-heading {
+  font-size: clamp(1.25rem, 4vw, 2.25rem);
+  line-height: 1.3;
+  word-break: break-word;
+  white-space: normal;
+}
+</style>

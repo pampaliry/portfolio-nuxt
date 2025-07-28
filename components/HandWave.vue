@@ -18,6 +18,6 @@
   display: inline-block;
   transform-origin: 70% 70%;
   animation: wave 2s infinite;
-  font-size: 1.5em;
+  font-size: 2.5em !important;
 }
 </style>
