@@ -386,12 +386,12 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-TxsPRh5b.mjs')
+    component: () => import('./index-B7_c5XGD.mjs')
   },
   {
     name: "contact",
     path: "/contact",
-    component: () => import('./contact-tf3N4bVY.mjs')
+    component: () => import('./contact-BAyuF5yU.mjs')
   },
   {
     name: "projects",
