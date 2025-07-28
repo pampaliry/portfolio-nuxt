@@ -1,4 +1,4 @@
-import { defineComponent as defineComponent$1, inject as inject$1, computed, toValue, Fragment, capitalize, getCurrentInstance as getCurrentInstance$1, warn, watch, onScopeDispose, useId, provide, shallowRef, ref, h, Suspense, toRef, readonly, unref, hasInjectionContext, toRaw, reactive, watchEffect, createVNode, effectScope, shallowReactive, defineAsyncComponent, mergeProps, createElementVNode, normalizeClass, normalizeStyle, createApp, onErrorCaptured, onServerPrefetch, resolveDynamicComponent, isReadonly, isRef, isShallow, isReactive, getCurrentScope, withCtx, toRefs, nextTick, useSSRContext } from 'vue';
+import { defineComponent as defineComponent$1, inject as inject$1, computed, toValue, Fragment, capitalize, getCurrentInstance as getCurrentInstance$1, warn, watch, onScopeDispose, useId, provide, shallowRef, ref, h, Suspense, toRef, readonly, unref, hasInjectionContext, toRaw, reactive, watchEffect, createVNode, mergeProps, createElementVNode, effectScope, shallowReactive, defineAsyncComponent, normalizeClass, normalizeStyle, createApp, onErrorCaptured, onServerPrefetch, resolveDynamicComponent, isReadonly, isRef, isShallow, isReactive, getCurrentScope, withCtx, toRefs, nextTick, useSSRContext } from 'vue';
 import { j as createError$1, l as klona, m as defuFn, n as hasProtocol, o as isScriptProtocol, q as joinURL, w as withQuery, v as sanitizeStatusCode, x as getContext, $ as $fetch$1, y as baseURL, z as createHooks, A as executeAsync, B as toRouteMatcher, C as createRouter$1, D as defu } from '../_/nitro.mjs';
 import { RouterView, useRoute as useRoute$1, createMemoryHistory, createRouter, START_LOCATION } from 'vue-router';
 import { _api, addAPIProvider, setCustomIconsLoader } from '@iconify/vue';
@@ -386,17 +386,17 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-BGnTYnpu.mjs')
+    component: () => import('./index-AmDdzNH2.mjs')
   },
   {
     name: "contact",
     path: "/contact",
-    component: () => import('./contact-DWuvrRB-.mjs')
+    component: () => import('./contact-tf3N4bVY.mjs')
   },
   {
     name: "projects",
     path: "/projects",
-    component: () => import('./projects-CE6IMEv0.mjs')
+    component: () => import('./projects-D3D4Yngj.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {
@@ -1066,6 +1066,20 @@ function getObjectValueByPath(obj, path, fallback) {
   path = path.replace(/^\./, "");
   return getNestedValue(obj, path.split("."), fallback);
 }
+function getPropertyFromItem(item, property, fallback) {
+  if (property === true) return item === void 0 ? fallback : item;
+  if (property == null || typeof property === "boolean") return fallback;
+  if (item !== Object(item)) {
+    if (typeof property !== "function") return fallback;
+    const value2 = property(item, fallback);
+    return typeof value2 === "undefined" ? fallback : value2;
+  }
+  if (typeof property === "string") return getObjectValueByPath(item, property, fallback);
+  if (Array.isArray(property)) return getNestedValue(item, property, fallback);
+  if (typeof property !== "function") return fallback;
+  const value = property(item, fallback);
+  return typeof value === "undefined" ? fallback : value;
+}
 function createRange(length) {
   let start = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : 0;
   return Array.from({
@@ -1287,6 +1301,42 @@ function focusableChildren(el) {
   const targets = ["button", "[href]", 'input:not([type="hidden"])', "select", "textarea", "[tabindex]"].map((s) => `${s}${filterByTabIndex ? ':not([tabindex="-1"])' : ""}:not([disabled])`).join(", ");
   return [...el.querySelectorAll(targets)];
 }
+function getNextElement(elements, location, condition) {
+  let _el;
+  let idx = elements.indexOf((void 0).activeElement);
+  const inc = location === "next" ? 1 : -1;
+  do {
+    idx += inc;
+    _el = elements[idx];
+  } while ((!_el || _el.offsetParent == null || false) && idx < elements.length && idx >= 0);
+  return _el;
+}
+function focusChild(el, location) {
+  var _a, _b, _c, _d;
+  const focusable = focusableChildren(el);
+  if (location == null) {
+    if (el === (void 0).activeElement || !el.contains((void 0).activeElement)) {
+      (_a = focusable[0]) == null ? void 0 : _a.focus();
+    }
+  } else if (location === "first") {
+    (_b = focusable[0]) == null ? void 0 : _b.focus();
+  } else if (location === "last") {
+    (_c = focusable.at(-1)) == null ? void 0 : _c.focus();
+  } else if (typeof location === "number") {
+    (_d = focusable[location]) == null ? void 0 : _d.focus();
+  } else {
+    const _el = getNextElement(focusable, location);
+    if (_el) _el.focus();
+    else focusChild(el, location === "next" ? "first" : "last");
+  }
+}
+function defer(timeout, cb) {
+  {
+    cb();
+    return () => {
+    };
+  }
+}
 function templateRef() {
   const el = shallowRef();
   const fn = (target) => {
@@ -1302,6 +1352,9 @@ function templateRef() {
     get: () => refElement(el.value)
   });
   return fn;
+}
+function isPrimitive(value) {
+  return typeof value === "string" || typeof value === "number" || typeof value === "boolean" || typeof value === "bigint";
 }
 function onlyDefinedProps(props) {
   const booleanAttributes = ["checked", "disabled"];
@@ -1354,6 +1407,10 @@ function consoleWarn(message) {
 }
 function consoleError(message) {
   warn(`Vuetify error: ${message}`);
+}
+function deprecate(original, replacement) {
+  replacement = Array.isArray(replacement) ? replacement.slice(0, -1).map((s) => `'${s}'`).join(", ") + ` or '${replacement.at(-1)}'` : `'${replacement}'`;
+  warn(`[Vuetify UPGRADE] '${original}' is deprecated, use ${replacement} instead.`);
 }
 const delta = 0.20689655172413793;
 const cielabForwardTransform = (t) => t > delta ** 3 ? Math.cbrt(t) : t / (3 * delta ** 2) + 4 / 29;
@@ -3987,7 +4044,7 @@ const plugins = [
   vuetify_hjFy4UiBVKu2U8_BW9ggkFzfvErKr3wFgTHpa6TF5Ds
 ];
 const layouts = {
-  default: defineAsyncComponent(() => import('./default-CtThFSCh.mjs').then((m) => m.default || m))
+  default: defineAsyncComponent(() => import('./default-CDly3-47.mjs').then((m) => m.default || m))
 };
 const LayoutLoader = defineComponent$1({
   name: "LayoutLoader",
@@ -4392,5 +4449,5 @@ let entry;
 }
 const entry$1 = (ssrContext) => entry(ssrContext);
 
-export { createError as $, isCssColor as A, isParsableColor as B, parseColor as C, getForeground as D, EventProp as E, convertToUnit as F, useTheme as G, useIcon as H, IconValue as I, flattenFragments as J, clamp as K, hasEvent as L, getCurrentInstance as M, isObject as N, keyCodes as O, onlyDefinedProps as P, breakpoints as Q, wrapInArray as R, consoleWarn as S, findChildrenWithProvide as T, callEvent as U, useToggleScope as V, pick as W, filterInputAttrs as X, useAppConfig as Y, asyncDataDefaults as Z, _export_sfc as _, useNuxtApp as a, useLayoutItem as a0, makeLayoutItemProps as a1, useLayout as a2, VApp as a3, __nuxt_component_1 as a4, useRuntimeConfig as b, nuxtLinkDefaults as c, makeComponentProps as d, entry$1 as default, useRtl as e, useDisplay as f, genericComponent as g, useResizeObserver as h, useGoTo as i, useRender as j, focusableChildren as k, makeThemeProps as l, makeDisplayProps as m, navigateTo as n, deepEqual as o, propsFactory as p, provideTheme as q, resolveRouteObject as r, provideDefaults as s, tryUseNuxtApp as t, useRouter as u, useLocale as v, useProxiedModel as w, includes as x, getCurrentInstanceName as y, destructComputed as z };
+export { createError as $, isCssColor as A, isParsableColor as B, parseColor as C, getForeground as D, EventProp as E, convertToUnit as F, useTheme as G, useIcon as H, IconValue as I, flattenFragments as J, clamp as K, hasEvent as L, getCurrentInstance as M, isObject as N, keyCodes as O, onlyDefinedProps as P, breakpoints as Q, wrapInArray as R, consoleWarn as S, findChildrenWithProvide as T, callEvent as U, useToggleScope as V, pick as W, filterInputAttrs as X, useAppConfig as Y, asyncDataDefaults as Z, _export_sfc as _, useNuxtApp as a, useLayoutItem as a0, makeLayoutItemProps as a1, consoleError as a2, defineComponent as a3, deprecate as a4, focusChild as a5, getPropertyFromItem as a6, isPrimitive as a7, omit as a8, useLayout as a9, defer as aa, VApp as ab, __nuxt_component_1 as ac, useRuntimeConfig as b, nuxtLinkDefaults as c, makeComponentProps as d, entry$1 as default, useRtl as e, useDisplay as f, genericComponent as g, useResizeObserver as h, useGoTo as i, useRender as j, focusableChildren as k, makeThemeProps as l, makeDisplayProps as m, navigateTo as n, deepEqual as o, propsFactory as p, provideTheme as q, resolveRouteObject as r, provideDefaults as s, tryUseNuxtApp as t, useRouter as u, useLocale as v, useProxiedModel as w, includes as x, getCurrentInstanceName as y, destructComputed as z };
 //# sourceMappingURL=server.mjs.map
