@@ -1,2 +1,7 @@
-User-Agent: *
-Disallow:
+User-agent: *
+Disallow: /api/
+Disallow: /admin/
+Disallow: /dev/
+Allow: /
+
+Sitemap: https://mm-smart.eu/sitemap.xml

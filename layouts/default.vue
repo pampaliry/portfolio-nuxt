@@ -2,17 +2,18 @@
   <v-app>
 
     <!-- NAVIGATION -->
-    <v-app-bar flat app>
+    <v-app-bar flat app role="navigation" aria-label="Hlavná navigácia">
       <v-container>
         <v-row align="center" no-gutters>
           <!-- Logo -->
           <v-col class="d-flex align-center">
             <v-app-bar-nav-icon
               class="d-sm-none"
+              aria-label="Zobraziť navigačné menu"
               @click="drawer = !drawer"
             />
             <v-toolbar-title class="ml-2">
-              <LogoRotate />
+              <LogoRotate aria-hidden="true" />
             </v-toolbar-title>
           </v-col>
 
@@ -40,12 +41,15 @@
       temporary
       class="d-sm-none"
       width="220"
+      role="navigation"
+      aria-label="Mobilné menu"
     >
       <v-list nav dense>
         <v-list-item
           v-for="link in navLinks"
           :key="link.path"
           :to="link.path"
+          :aria-label="`Navigácia na stránku ${link.name}`"
           link
           @click="drawer = false"
         >
@@ -55,12 +59,12 @@
     </v-navigation-drawer>
 
     <!-- MAIN CONTENT -->
-    <v-main>
+    <v-main role="main">
       <NuxtPage />
     </v-main>
 
     <!-- FOOTER (minimal version) -->
-    <v-footer app class="text-center text-secondary">
+    <v-footer app class="text-center text-secondary" role="contentinfo">
       <v-container>
         <small>&copy; {{ new Date().getFullYear() }} Matus Matko – Všetky práva vyhradené.</small>
       </v-container>

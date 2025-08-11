@@ -1,5 +1,5 @@
 <template>
-  <span class="handwave">👋</span>
+  <span class="handwave" aria-hidden="true">👋</span>
 </template>
 
 <style scoped>

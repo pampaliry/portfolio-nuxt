@@ -72,7 +72,7 @@ function createHead(options = {}) {
   return head;
 }
 
-const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[],"style":[],"script":[],"noscript":[]};
+const appHead = {"meta":[{"name":"theme-color","content":"#424242"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"},{"property":"og:title","content":"Matus Matko – Fullstack Developer Portfolio"},{"property":"og:description","content":"Reálne projekty, Nuxt + .NET, vlastný server, live backend – všetko v jednom."},{"property":"og:image","content":"https://mm-smart.eu/social-preview.jpg"},{"name":"twitter:card","content":"summary_large_image"},{"name":"twitter:title","content":"Matus Matko – Fullstack Developer Portfolio"},{"name":"twitter:description","content":"Reálne projekty, Nuxt + .NET, vlastný server, live backend – všetko v jednom."},{"name":"twitter:image","content":"https://mm-smart.eu/social-preview.jpg"}],"link":[],"style":[],"script":[],"noscript":[],"title":"Matus Matko – Fullstack Developer Portfolio"};
 
 const appRootTag = "div";
 

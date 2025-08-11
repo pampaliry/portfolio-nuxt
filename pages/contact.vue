@@ -1,28 +1,59 @@
 <script setup lang="ts">
-import { reactive, ref } from 'vue'
+import { reactive, ref, watch, nextTick } from 'vue'
 
-// 💬 Typ pre náš formulár
 interface ContactForm {
   name: string
   email: string
   message: string
 }
 
-// 💡 Reactive formulár s typom
 const form = reactive<ContactForm>({
   name: '',
   email: '',
   message: ''
 })
 
-// UI stav
+const errors = reactive({
+  name: '',
+  email: '',
+  message: ''
+})
+
 const loading = ref(false)
 const success = ref(false)
 
-// 📨 Odoslanie formulára
+watch(() => form.name, (val) => {
+  errors.name = val.trim().length < 2 ? 'Zadaj aspoň 2 znaky.' : ''
+})
+
+watch(() => form.email, (val) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  errors.email = emailRegex.test(val) ? '' : 'Zadaj platný e-mail.'
+})
+
+watch(() => form.message, (val) => {
+  errors.message = val.trim().length < 10 ? 'Správa musí mať aspoň 10 znakov.' : ''
+})
+
+const resetForm = async () => {
+  form.name = ''
+  form.email = ''
+  form.message = ''
+  await nextTick()
+  errors.name = ''
+  errors.email = ''
+  errors.message = ''
+}
+
 const submitForm = async () => {
   loading.value = true
   success.value = false
+
+  if (errors.name || errors.email || errors.message) {
+    loading.value = false
+    return
+  }
+
   try {
     const res = await $fetch('/api/send-contact', {
       method: 'POST',
@@ -35,6 +66,7 @@ const submitForm = async () => {
 
     if ((res as { success: boolean }).success) {
       success.value = true
+      await resetForm()
     }
   } catch (err) {
     console.error('Chyba pri odosielaní:', err)
@@ -48,15 +80,59 @@ const submitForm = async () => {
   <v-container class="mt-12" fluid>
     <v-row justify="center">
       <v-col cols="12" md="6">
-        <v-form @submit.prevent="submitForm">
-          <v-text-field v-model="form.name" label="Meno" required />
-          <v-text-field v-model="form.email" label="Email" required type="email" />
-          <v-textarea v-model="form.message" label="Správa" rows="4" />
-          <v-btn :loading="loading" color="secondary" class="mt-4" type="submit">
+        <v-form aria-label="Kontaktný formulár" role="form" @submit.prevent="submitForm">
+          <v-text-field
+            v-model="form.name"
+            label="Meno"
+            placeholder="Tvoje meno"
+            :error-messages="errors.name"
+            required
+            outlined
+            class="mb-4"
+            aria-label="Meno"
+          />
+
+          <v-text-field
+            v-model="form.email"
+            label="Email"
+            placeholder="tvoj@email.com"
+            :error-messages="errors.email"
+            required
+            type="email"
+            outlined
+            class="mb-4"
+            aria-label="Emailová adresa"
+          />
+
+          <v-textarea
+            v-model="form.message"
+            label="Správa"
+            placeholder="Napíš svoju správu..."
+            :error-messages="errors.message"
+            rows="4"
+            required
+            outlined
+            class="mb-4"
+            aria-label="Správa"
+          />
+
+          <v-btn
+            :loading="loading"
+            color="secondary"
+            class="mt-4"
+            type="submit"
+            aria-label="Odoslať správu"
+          >
             Odoslať
           </v-btn>
 
-          <v-alert v-if="success" type="success" class="mt-4">
+          <v-alert
+            v-if="success"
+            type="success"
+            class="mt-4"
+            role="status"
+            aria-live="polite"
+          >
             Správa bola úspešne odoslaná!
           </v-alert>
         </v-form>
