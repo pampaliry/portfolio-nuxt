@@ -386,7 +386,7 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-BZD0tLBe.mjs')
+    component: () => import('./index-aTMiipmv.mjs')
   },
   {
     name: "ws-bpm",

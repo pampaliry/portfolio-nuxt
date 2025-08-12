@@ -20,6 +20,16 @@
 
                 <br><br>
 
+                              Ako súčasť tejto pracovnej ponuky som pripravil aj malý PoC:
+                <NuxtLink to="/ws-bpm" aria-label="Prejsť na WS BPM – Live WebSocket demo">
+                  WS BPM – Live WebSocket demo
+                </NuxtLink>.
+                Stránka číta živé čísla z WebSocketu (predvolene verejný stream) a mapuje ich do BPM, 
+                aby bolo vidieť prácu s realtime dátami a plynulou vizualizáciou. 
+                V produkcii sa dá pripojiť vlastný .NET WebSocket cez <code>runtimeConfig.public.wsUrl</code>.
+
+                <br><br>
+
                 Mám predchádzajúcu prax ako frontend vývojár v spoločnosti <strong>Railsformers (2022)</strong>, kde som jeden rok vytváral šablóny v HTML/PHP pre firemné CMS. 
                 Pracoval som <strong>desktop-first</strong>, používal <strong>Bootstrap</strong>, riešil základy <strong>technického SEO</strong>, jednoduché animácie a základný <strong>deploy</strong>. 
                 Dnes sa aktívne posúvam k plnému <strong>fullstack vývoju</strong>, zameranému na <strong>moderný Vue/Nuxt ekosystém</strong>, kde pracujem s komponentovým prístupom, TypeScriptom a DevOps nástrojmi.
@@ -36,16 +46,7 @@
                 Napriek minimalistickému prístupu projekt spĺňa požiadavky na rýchle a ekonomické nasadenie.
 
                 <br><br>
-
-                Ako súčasť tejto pracovnej ponuky som pripravil aj malý PoC:
-  <NuxtLink to="/ws-bpm" aria-label="Prejsť na WS BPM – Live WebSocket demo">
-    WS BPM – Live WebSocket demo
-  </NuxtLink>.
-  Stránka číta živé čísla z WebSocketu (predvolene verejný stream) a mapuje ich do BPM, 
-  aby bolo vidieť prácu s realtime dátami a plynulou vizualizáciou. 
-  V produkcii sa dá pripojiť vlastný .NET WebSocket cez <code>runtimeConfig.public.wsUrl</code>.
-
-                <br><br>
+                
 
                 Mojím cieľom je aktívne pracovať na zmysluplných projektoch, ktoré mi umožnia ďalej rozvíjať svoje schopnosti ako fullstack developer, 
                 pracovať s moderným frontendom, backendom, API architektúrou a prípadne aj integrovať IoT.

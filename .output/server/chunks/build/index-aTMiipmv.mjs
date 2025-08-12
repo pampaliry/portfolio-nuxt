@@ -139,7 +139,7 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
                           _push5(ssrRenderComponent(VCardText, { class: "text-body-1 text-center mt-8" }, {
                             default: withCtx((_5, _push6, _parent6, _scopeId5) => {
                               if (_push6) {
-                                _push6(`<div class="text-justify" style="${ssrRenderStyle({ "line-height": "1.8" })}"${_scopeId5}> Tento projekt vznikol ako reakcia na pracovn\xFA ponuku pre Vue/Nuxt frontend v\xFDvoj\xE1ra. Namiesto tradi\u010Dn\xE9ho \u017Eivotopisu som sa rozhodol uk\xE1za\u0165 re\xE1lne rie\u0161enie \u2013 <strong${_scopeId5}>nasaden\xFA aplik\xE1ciu</strong>, ktor\xE1 be\u017E\xED na mojom vlastnom serveri (Debian + PM2 + Nginx + Git cron deploy), presne tak, ako by fungovala \u017Eiv\xE1 firemn\xE1 prezent\xE1cia. <br${_scopeId5}><br${_scopeId5}> M\xE1m predch\xE1dzaj\xFAcu prax ako frontend v\xFDvoj\xE1r v spolo\u010Dnosti <strong${_scopeId5}>Railsformers (2022)</strong>, kde som jeden rok vytv\xE1ral \u0161abl\xF3ny v HTML/PHP pre firemn\xE9 CMS. Pracoval som <strong${_scopeId5}>desktop-first</strong>, pou\u017E\xEDval <strong${_scopeId5}>Bootstrap</strong>, rie\u0161il z\xE1klady <strong${_scopeId5}>technick\xE9ho SEO</strong>, jednoduch\xE9 anim\xE1cie a z\xE1kladn\xFD <strong${_scopeId5}>deploy</strong>. Dnes sa akt\xEDvne pos\xFAvam k pln\xE9mu <strong${_scopeId5}>fullstack v\xFDvoju</strong>, zameran\xE9mu na <strong${_scopeId5}>modern\xFD Vue/Nuxt ekosyst\xE9m</strong>, kde pracujem s komponentov\xFDm pr\xEDstupom, TypeScriptom a DevOps n\xE1strojmi. <br${_scopeId5}><br${_scopeId5}> Popri webov\xFDch projektoch rozv\xEDjam aj vlastn\xE9 technick\xE9 experimenty, napr. <strong${_scopeId5}>ESP32-Smarwi Controller</strong> \u2013 syst\xE9m pre inteligentn\xE9 vetranie zalo\u017Een\xFD na DHT senzore, OTA aktualiz\xE1ci\xE1ch, HTTP API a backendom v AdonisJS. Kv\xF4li v\xE4\u010D\u0161ej \u0161k\xE1lovate\u013Enosti som pre\u0161iel z Arduino IDE na <strong${_scopeId5}>PlatformIO</strong> v prostred\xED VS Code. <br${_scopeId5}><br${_scopeId5}> Ako men\u0161\xED ved\u013Eaj\u0161\xED projekt spom\xEDnam aj str\xE1nku <a href="http://www.umy-ma.sk" target="_blank" rel="noopener noreferrer" aria-label="Extern\xFD odkaz na str\xE1nku umy-ma.sk"${_scopeId5}>umy-ma.sk</a>, ktor\xFA som vytvoril ako jednoduch\xFA vizitku pre kamar\xE1tov pomocou Vite. Napriek minimalistick\xE9mu pr\xEDstupu projekt sp\u013A\u0148a po\u017Eiadavky na r\xFDchle a ekonomick\xE9 nasadenie. <br${_scopeId5}><br${_scopeId5}> Ako s\xFA\u010Das\u0165 tejto pracovnej ponuky som pripravil aj mal\xFD PoC: `);
+                                _push6(`<div class="text-justify" style="${ssrRenderStyle({ "line-height": "1.8" })}"${_scopeId5}> Tento projekt vznikol ako reakcia na pracovn\xFA ponuku pre Vue/Nuxt frontend v\xFDvoj\xE1ra. Namiesto tradi\u010Dn\xE9ho \u017Eivotopisu som sa rozhodol uk\xE1za\u0165 re\xE1lne rie\u0161enie \u2013 <strong${_scopeId5}>nasaden\xFA aplik\xE1ciu</strong>, ktor\xE1 be\u017E\xED na mojom vlastnom serveri (Debian + PM2 + Nginx + Git cron deploy), presne tak, ako by fungovala \u017Eiv\xE1 firemn\xE1 prezent\xE1cia. <br${_scopeId5}><br${_scopeId5}> Ako s\xFA\u010Das\u0165 tejto pracovnej ponuky som pripravil aj mal\xFD PoC: `);
                                 _push6(ssrRenderComponent(_component_NuxtLink, {
                                   to: "/ws-bpm",
                                   "aria-label": "Prejs\u0165 na WS BPM \u2013 Live WebSocket demo"
@@ -155,7 +155,7 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
                                   }),
                                   _: 1
                                 }, _parent6, _scopeId5));
-                                _push6(`. Str\xE1nka \u010D\xEDta \u017Eiv\xE9 \u010D\xEDsla z WebSocketu (predvolene verejn\xFD stream) a mapuje ich do BPM, aby bolo vidie\u0165 pr\xE1cu s realtime d\xE1tami a plynulou vizualiz\xE1ciou. V produkcii sa d\xE1 pripoji\u0165 vlastn\xFD .NET WebSocket cez <code${_scopeId5}>runtimeConfig.public.wsUrl</code>. <br${_scopeId5}><br${_scopeId5}> Moj\xEDm cie\u013Eom je akt\xEDvne pracova\u0165 na zmyslupln\xFDch projektoch, ktor\xE9 mi umo\u017Enia \u010Falej rozv\xEDja\u0165 svoje schopnosti ako fullstack developer, pracova\u0165 s modern\xFDm frontendom, backendom, API architekt\xFArou a pr\xEDpadne aj integrova\u0165 IoT. </div>`);
+                                _push6(`. Str\xE1nka \u010D\xEDta \u017Eiv\xE9 \u010D\xEDsla z WebSocketu (predvolene verejn\xFD stream) a mapuje ich do BPM, aby bolo vidie\u0165 pr\xE1cu s realtime d\xE1tami a plynulou vizualiz\xE1ciou. V produkcii sa d\xE1 pripoji\u0165 vlastn\xFD .NET WebSocket cez <code${_scopeId5}>runtimeConfig.public.wsUrl</code>. <br${_scopeId5}><br${_scopeId5}> M\xE1m predch\xE1dzaj\xFAcu prax ako frontend v\xFDvoj\xE1r v spolo\u010Dnosti <strong${_scopeId5}>Railsformers (2022)</strong>, kde som jeden rok vytv\xE1ral \u0161abl\xF3ny v HTML/PHP pre firemn\xE9 CMS. Pracoval som <strong${_scopeId5}>desktop-first</strong>, pou\u017E\xEDval <strong${_scopeId5}>Bootstrap</strong>, rie\u0161il z\xE1klady <strong${_scopeId5}>technick\xE9ho SEO</strong>, jednoduch\xE9 anim\xE1cie a z\xE1kladn\xFD <strong${_scopeId5}>deploy</strong>. Dnes sa akt\xEDvne pos\xFAvam k pln\xE9mu <strong${_scopeId5}>fullstack v\xFDvoju</strong>, zameran\xE9mu na <strong${_scopeId5}>modern\xFD Vue/Nuxt ekosyst\xE9m</strong>, kde pracujem s komponentov\xFDm pr\xEDstupom, TypeScriptom a DevOps n\xE1strojmi. <br${_scopeId5}><br${_scopeId5}> Popri webov\xFDch projektoch rozv\xEDjam aj vlastn\xE9 technick\xE9 experimenty, napr. <strong${_scopeId5}>ESP32-Smarwi Controller</strong> \u2013 syst\xE9m pre inteligentn\xE9 vetranie zalo\u017Een\xFD na DHT senzore, OTA aktualiz\xE1ci\xE1ch, HTTP API a backendom v AdonisJS. Kv\xF4li v\xE4\u010D\u0161ej \u0161k\xE1lovate\u013Enosti som pre\u0161iel z Arduino IDE na <strong${_scopeId5}>PlatformIO</strong> v prostred\xED VS Code. <br${_scopeId5}><br${_scopeId5}> Ako men\u0161\xED ved\u013Eaj\u0161\xED projekt spom\xEDnam aj str\xE1nku <a href="http://www.umy-ma.sk" target="_blank" rel="noopener noreferrer" aria-label="Extern\xFD odkaz na str\xE1nku umy-ma.sk"${_scopeId5}>umy-ma.sk</a>, ktor\xFA som vytvoril ako jednoduch\xFA vizitku pre kamar\xE1tov pomocou Vite. Napriek minimalistick\xE9mu pr\xEDstupu projekt sp\u013A\u0148a po\u017Eiadavky na r\xFDchle a ekonomick\xE9 nasadenie. <br${_scopeId5}><br${_scopeId5}> Moj\xEDm cie\u013Eom je akt\xEDvne pracova\u0165 na zmyslupln\xFDch projektoch, ktor\xE9 mi umo\u017Enia \u010Falej rozv\xEDja\u0165 svoje schopnosti ako fullstack developer, pracova\u0165 s modern\xFDm frontendom, backendom, API architekt\xFArou a pr\xEDpadne aj integrova\u0165 IoT. </div>`);
                               } else {
                                 return [
                                   createVNode("div", {
@@ -165,6 +165,21 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
                                     createTextVNode(" Tento projekt vznikol ako reakcia na pracovn\xFA ponuku pre Vue/Nuxt frontend v\xFDvoj\xE1ra. Namiesto tradi\u010Dn\xE9ho \u017Eivotopisu som sa rozhodol uk\xE1za\u0165 re\xE1lne rie\u0161enie \u2013 "),
                                     createVNode("strong", null, "nasaden\xFA aplik\xE1ciu"),
                                     createTextVNode(", ktor\xE1 be\u017E\xED na mojom vlastnom serveri (Debian + PM2 + Nginx + Git cron deploy), presne tak, ako by fungovala \u017Eiv\xE1 firemn\xE1 prezent\xE1cia. "),
+                                    createVNode("br"),
+                                    createVNode("br"),
+                                    createTextVNode(" Ako s\xFA\u010Das\u0165 tejto pracovnej ponuky som pripravil aj mal\xFD PoC: "),
+                                    createVNode(_component_NuxtLink, {
+                                      to: "/ws-bpm",
+                                      "aria-label": "Prejs\u0165 na WS BPM \u2013 Live WebSocket demo"
+                                    }, {
+                                      default: withCtx(() => [
+                                        createTextVNode(" WS BPM \u2013 Live WebSocket demo ")
+                                      ]),
+                                      _: 1
+                                    }),
+                                    createTextVNode(". Str\xE1nka \u010D\xEDta \u017Eiv\xE9 \u010D\xEDsla z WebSocketu (predvolene verejn\xFD stream) a mapuje ich do BPM, aby bolo vidie\u0165 pr\xE1cu s realtime d\xE1tami a plynulou vizualiz\xE1ciou. V produkcii sa d\xE1 pripoji\u0165 vlastn\xFD .NET WebSocket cez "),
+                                    createVNode("code", null, "runtimeConfig.public.wsUrl"),
+                                    createTextVNode(". "),
                                     createVNode("br"),
                                     createVNode("br"),
                                     createTextVNode(" M\xE1m predch\xE1dzaj\xFAcu prax ako frontend v\xFDvoj\xE1r v spolo\u010Dnosti "),
@@ -199,21 +214,6 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
                                       "aria-label": "Extern\xFD odkaz na str\xE1nku umy-ma.sk"
                                     }, "umy-ma.sk"),
                                     createTextVNode(", ktor\xFA som vytvoril ako jednoduch\xFA vizitku pre kamar\xE1tov pomocou Vite. Napriek minimalistick\xE9mu pr\xEDstupu projekt sp\u013A\u0148a po\u017Eiadavky na r\xFDchle a ekonomick\xE9 nasadenie. "),
-                                    createVNode("br"),
-                                    createVNode("br"),
-                                    createTextVNode(" Ako s\xFA\u010Das\u0165 tejto pracovnej ponuky som pripravil aj mal\xFD PoC: "),
-                                    createVNode(_component_NuxtLink, {
-                                      to: "/ws-bpm",
-                                      "aria-label": "Prejs\u0165 na WS BPM \u2013 Live WebSocket demo"
-                                    }, {
-                                      default: withCtx(() => [
-                                        createTextVNode(" WS BPM \u2013 Live WebSocket demo ")
-                                      ]),
-                                      _: 1
-                                    }),
-                                    createTextVNode(". Str\xE1nka \u010D\xEDta \u017Eiv\xE9 \u010D\xEDsla z WebSocketu (predvolene verejn\xFD stream) a mapuje ich do BPM, aby bolo vidie\u0165 pr\xE1cu s realtime d\xE1tami a plynulou vizualiz\xE1ciou. V produkcii sa d\xE1 pripoji\u0165 vlastn\xFD .NET WebSocket cez "),
-                                    createVNode("code", null, "runtimeConfig.public.wsUrl"),
-                                    createTextVNode(". "),
                                     createVNode("br"),
                                     createVNode("br"),
                                     createTextVNode(" Moj\xEDm cie\u013Eom je akt\xEDvne pracova\u0165 na zmyslupln\xFDch projektoch, ktor\xE9 mi umo\u017Enia \u010Falej rozv\xEDja\u0165 svoje schopnosti ako fullstack developer, pracova\u0165 s modern\xFDm frontendom, backendom, API architekt\xFArou a pr\xEDpadne aj integrova\u0165 IoT. ")
@@ -320,6 +320,21 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
                                   createTextVNode(", ktor\xE1 be\u017E\xED na mojom vlastnom serveri (Debian + PM2 + Nginx + Git cron deploy), presne tak, ako by fungovala \u017Eiv\xE1 firemn\xE1 prezent\xE1cia. "),
                                   createVNode("br"),
                                   createVNode("br"),
+                                  createTextVNode(" Ako s\xFA\u010Das\u0165 tejto pracovnej ponuky som pripravil aj mal\xFD PoC: "),
+                                  createVNode(_component_NuxtLink, {
+                                    to: "/ws-bpm",
+                                    "aria-label": "Prejs\u0165 na WS BPM \u2013 Live WebSocket demo"
+                                  }, {
+                                    default: withCtx(() => [
+                                      createTextVNode(" WS BPM \u2013 Live WebSocket demo ")
+                                    ]),
+                                    _: 1
+                                  }),
+                                  createTextVNode(". Str\xE1nka \u010D\xEDta \u017Eiv\xE9 \u010D\xEDsla z WebSocketu (predvolene verejn\xFD stream) a mapuje ich do BPM, aby bolo vidie\u0165 pr\xE1cu s realtime d\xE1tami a plynulou vizualiz\xE1ciou. V produkcii sa d\xE1 pripoji\u0165 vlastn\xFD .NET WebSocket cez "),
+                                  createVNode("code", null, "runtimeConfig.public.wsUrl"),
+                                  createTextVNode(". "),
+                                  createVNode("br"),
+                                  createVNode("br"),
                                   createTextVNode(" M\xE1m predch\xE1dzaj\xFAcu prax ako frontend v\xFDvoj\xE1r v spolo\u010Dnosti "),
                                   createVNode("strong", null, "Railsformers (2022)"),
                                   createTextVNode(", kde som jeden rok vytv\xE1ral \u0161abl\xF3ny v HTML/PHP pre firemn\xE9 CMS. Pracoval som "),
@@ -352,21 +367,6 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
                                     "aria-label": "Extern\xFD odkaz na str\xE1nku umy-ma.sk"
                                   }, "umy-ma.sk"),
                                   createTextVNode(", ktor\xFA som vytvoril ako jednoduch\xFA vizitku pre kamar\xE1tov pomocou Vite. Napriek minimalistick\xE9mu pr\xEDstupu projekt sp\u013A\u0148a po\u017Eiadavky na r\xFDchle a ekonomick\xE9 nasadenie. "),
-                                  createVNode("br"),
-                                  createVNode("br"),
-                                  createTextVNode(" Ako s\xFA\u010Das\u0165 tejto pracovnej ponuky som pripravil aj mal\xFD PoC: "),
-                                  createVNode(_component_NuxtLink, {
-                                    to: "/ws-bpm",
-                                    "aria-label": "Prejs\u0165 na WS BPM \u2013 Live WebSocket demo"
-                                  }, {
-                                    default: withCtx(() => [
-                                      createTextVNode(" WS BPM \u2013 Live WebSocket demo ")
-                                    ]),
-                                    _: 1
-                                  }),
-                                  createTextVNode(". Str\xE1nka \u010D\xEDta \u017Eiv\xE9 \u010D\xEDsla z WebSocketu (predvolene verejn\xFD stream) a mapuje ich do BPM, aby bolo vidie\u0165 pr\xE1cu s realtime d\xE1tami a plynulou vizualiz\xE1ciou. V produkcii sa d\xE1 pripoji\u0165 vlastn\xFD .NET WebSocket cez "),
-                                  createVNode("code", null, "runtimeConfig.public.wsUrl"),
-                                  createTextVNode(". "),
                                   createVNode("br"),
                                   createVNode("br"),
                                   createTextVNode(" Moj\xEDm cie\u013Eom je akt\xEDvne pracova\u0165 na zmyslupln\xFDch projektoch, ktor\xE9 mi umo\u017Enia \u010Falej rozv\xEDja\u0165 svoje schopnosti ako fullstack developer, pracova\u0165 s modern\xFDm frontendom, backendom, API architekt\xFArou a pr\xEDpadne aj integrova\u0165 IoT. ")
@@ -441,6 +441,21 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
                                 createTextVNode(", ktor\xE1 be\u017E\xED na mojom vlastnom serveri (Debian + PM2 + Nginx + Git cron deploy), presne tak, ako by fungovala \u017Eiv\xE1 firemn\xE1 prezent\xE1cia. "),
                                 createVNode("br"),
                                 createVNode("br"),
+                                createTextVNode(" Ako s\xFA\u010Das\u0165 tejto pracovnej ponuky som pripravil aj mal\xFD PoC: "),
+                                createVNode(_component_NuxtLink, {
+                                  to: "/ws-bpm",
+                                  "aria-label": "Prejs\u0165 na WS BPM \u2013 Live WebSocket demo"
+                                }, {
+                                  default: withCtx(() => [
+                                    createTextVNode(" WS BPM \u2013 Live WebSocket demo ")
+                                  ]),
+                                  _: 1
+                                }),
+                                createTextVNode(". Str\xE1nka \u010D\xEDta \u017Eiv\xE9 \u010D\xEDsla z WebSocketu (predvolene verejn\xFD stream) a mapuje ich do BPM, aby bolo vidie\u0165 pr\xE1cu s realtime d\xE1tami a plynulou vizualiz\xE1ciou. V produkcii sa d\xE1 pripoji\u0165 vlastn\xFD .NET WebSocket cez "),
+                                createVNode("code", null, "runtimeConfig.public.wsUrl"),
+                                createTextVNode(". "),
+                                createVNode("br"),
+                                createVNode("br"),
                                 createTextVNode(" M\xE1m predch\xE1dzaj\xFAcu prax ako frontend v\xFDvoj\xE1r v spolo\u010Dnosti "),
                                 createVNode("strong", null, "Railsformers (2022)"),
                                 createTextVNode(", kde som jeden rok vytv\xE1ral \u0161abl\xF3ny v HTML/PHP pre firemn\xE9 CMS. Pracoval som "),
@@ -473,21 +488,6 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
                                   "aria-label": "Extern\xFD odkaz na str\xE1nku umy-ma.sk"
                                 }, "umy-ma.sk"),
                                 createTextVNode(", ktor\xFA som vytvoril ako jednoduch\xFA vizitku pre kamar\xE1tov pomocou Vite. Napriek minimalistick\xE9mu pr\xEDstupu projekt sp\u013A\u0148a po\u017Eiadavky na r\xFDchle a ekonomick\xE9 nasadenie. "),
-                                createVNode("br"),
-                                createVNode("br"),
-                                createTextVNode(" Ako s\xFA\u010Das\u0165 tejto pracovnej ponuky som pripravil aj mal\xFD PoC: "),
-                                createVNode(_component_NuxtLink, {
-                                  to: "/ws-bpm",
-                                  "aria-label": "Prejs\u0165 na WS BPM \u2013 Live WebSocket demo"
-                                }, {
-                                  default: withCtx(() => [
-                                    createTextVNode(" WS BPM \u2013 Live WebSocket demo ")
-                                  ]),
-                                  _: 1
-                                }),
-                                createTextVNode(". Str\xE1nka \u010D\xEDta \u017Eiv\xE9 \u010D\xEDsla z WebSocketu (predvolene verejn\xFD stream) a mapuje ich do BPM, aby bolo vidie\u0165 pr\xE1cu s realtime d\xE1tami a plynulou vizualiz\xE1ciou. V produkcii sa d\xE1 pripoji\u0165 vlastn\xFD .NET WebSocket cez "),
-                                createVNode("code", null, "runtimeConfig.public.wsUrl"),
-                                createTextVNode(". "),
                                 createVNode("br"),
                                 createVNode("br"),
                                 createTextVNode(" Moj\xEDm cie\u013Eom je akt\xEDvne pracova\u0165 na zmyslupln\xFDch projektoch, ktor\xE9 mi umo\u017Enia \u010Falej rozv\xEDja\u0165 svoje schopnosti ako fullstack developer, pracova\u0165 s modern\xFDm frontendom, backendom, API architekt\xFArou a pr\xEDpadne aj integrova\u0165 IoT. ")
@@ -570,6 +570,21 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
                               createTextVNode(", ktor\xE1 be\u017E\xED na mojom vlastnom serveri (Debian + PM2 + Nginx + Git cron deploy), presne tak, ako by fungovala \u017Eiv\xE1 firemn\xE1 prezent\xE1cia. "),
                               createVNode("br"),
                               createVNode("br"),
+                              createTextVNode(" Ako s\xFA\u010Das\u0165 tejto pracovnej ponuky som pripravil aj mal\xFD PoC: "),
+                              createVNode(_component_NuxtLink, {
+                                to: "/ws-bpm",
+                                "aria-label": "Prejs\u0165 na WS BPM \u2013 Live WebSocket demo"
+                              }, {
+                                default: withCtx(() => [
+                                  createTextVNode(" WS BPM \u2013 Live WebSocket demo ")
+                                ]),
+                                _: 1
+                              }),
+                              createTextVNode(". Str\xE1nka \u010D\xEDta \u017Eiv\xE9 \u010D\xEDsla z WebSocketu (predvolene verejn\xFD stream) a mapuje ich do BPM, aby bolo vidie\u0165 pr\xE1cu s realtime d\xE1tami a plynulou vizualiz\xE1ciou. V produkcii sa d\xE1 pripoji\u0165 vlastn\xFD .NET WebSocket cez "),
+                              createVNode("code", null, "runtimeConfig.public.wsUrl"),
+                              createTextVNode(". "),
+                              createVNode("br"),
+                              createVNode("br"),
                               createTextVNode(" M\xE1m predch\xE1dzaj\xFAcu prax ako frontend v\xFDvoj\xE1r v spolo\u010Dnosti "),
                               createVNode("strong", null, "Railsformers (2022)"),
                               createTextVNode(", kde som jeden rok vytv\xE1ral \u0161abl\xF3ny v HTML/PHP pre firemn\xE9 CMS. Pracoval som "),
@@ -602,21 +617,6 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
                                 "aria-label": "Extern\xFD odkaz na str\xE1nku umy-ma.sk"
                               }, "umy-ma.sk"),
                               createTextVNode(", ktor\xFA som vytvoril ako jednoduch\xFA vizitku pre kamar\xE1tov pomocou Vite. Napriek minimalistick\xE9mu pr\xEDstupu projekt sp\u013A\u0148a po\u017Eiadavky na r\xFDchle a ekonomick\xE9 nasadenie. "),
-                              createVNode("br"),
-                              createVNode("br"),
-                              createTextVNode(" Ako s\xFA\u010Das\u0165 tejto pracovnej ponuky som pripravil aj mal\xFD PoC: "),
-                              createVNode(_component_NuxtLink, {
-                                to: "/ws-bpm",
-                                "aria-label": "Prejs\u0165 na WS BPM \u2013 Live WebSocket demo"
-                              }, {
-                                default: withCtx(() => [
-                                  createTextVNode(" WS BPM \u2013 Live WebSocket demo ")
-                                ]),
-                                _: 1
-                              }),
-                              createTextVNode(". Str\xE1nka \u010D\xEDta \u017Eiv\xE9 \u010D\xEDsla z WebSocketu (predvolene verejn\xFD stream) a mapuje ich do BPM, aby bolo vidie\u0165 pr\xE1cu s realtime d\xE1tami a plynulou vizualiz\xE1ciou. V produkcii sa d\xE1 pripoji\u0165 vlastn\xFD .NET WebSocket cez "),
-                              createVNode("code", null, "runtimeConfig.public.wsUrl"),
-                              createTextVNode(". "),
                               createVNode("br"),
                               createVNode("br"),
                               createTextVNode(" Moj\xEDm cie\u013Eom je akt\xEDvne pracova\u0165 na zmyslupln\xFDch projektoch, ktor\xE9 mi umo\u017Enia \u010Falej rozv\xEDja\u0165 svoje schopnosti ako fullstack developer, pracova\u0165 s modern\xFDm frontendom, backendom, API architekt\xFArou a pr\xEDpadne aj integrova\u0165 IoT. ")
@@ -1299,6 +1299,21 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
                               createTextVNode(", ktor\xE1 be\u017E\xED na mojom vlastnom serveri (Debian + PM2 + Nginx + Git cron deploy), presne tak, ako by fungovala \u017Eiv\xE1 firemn\xE1 prezent\xE1cia. "),
                               createVNode("br"),
                               createVNode("br"),
+                              createTextVNode(" Ako s\xFA\u010Das\u0165 tejto pracovnej ponuky som pripravil aj mal\xFD PoC: "),
+                              createVNode(_component_NuxtLink, {
+                                to: "/ws-bpm",
+                                "aria-label": "Prejs\u0165 na WS BPM \u2013 Live WebSocket demo"
+                              }, {
+                                default: withCtx(() => [
+                                  createTextVNode(" WS BPM \u2013 Live WebSocket demo ")
+                                ]),
+                                _: 1
+                              }),
+                              createTextVNode(". Str\xE1nka \u010D\xEDta \u017Eiv\xE9 \u010D\xEDsla z WebSocketu (predvolene verejn\xFD stream) a mapuje ich do BPM, aby bolo vidie\u0165 pr\xE1cu s realtime d\xE1tami a plynulou vizualiz\xE1ciou. V produkcii sa d\xE1 pripoji\u0165 vlastn\xFD .NET WebSocket cez "),
+                              createVNode("code", null, "runtimeConfig.public.wsUrl"),
+                              createTextVNode(". "),
+                              createVNode("br"),
+                              createVNode("br"),
                               createTextVNode(" M\xE1m predch\xE1dzaj\xFAcu prax ako frontend v\xFDvoj\xE1r v spolo\u010Dnosti "),
                               createVNode("strong", null, "Railsformers (2022)"),
                               createTextVNode(", kde som jeden rok vytv\xE1ral \u0161abl\xF3ny v HTML/PHP pre firemn\xE9 CMS. Pracoval som "),
@@ -1331,21 +1346,6 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
                                 "aria-label": "Extern\xFD odkaz na str\xE1nku umy-ma.sk"
                               }, "umy-ma.sk"),
                               createTextVNode(", ktor\xFA som vytvoril ako jednoduch\xFA vizitku pre kamar\xE1tov pomocou Vite. Napriek minimalistick\xE9mu pr\xEDstupu projekt sp\u013A\u0148a po\u017Eiadavky na r\xFDchle a ekonomick\xE9 nasadenie. "),
-                              createVNode("br"),
-                              createVNode("br"),
-                              createTextVNode(" Ako s\xFA\u010Das\u0165 tejto pracovnej ponuky som pripravil aj mal\xFD PoC: "),
-                              createVNode(_component_NuxtLink, {
-                                to: "/ws-bpm",
-                                "aria-label": "Prejs\u0165 na WS BPM \u2013 Live WebSocket demo"
-                              }, {
-                                default: withCtx(() => [
-                                  createTextVNode(" WS BPM \u2013 Live WebSocket demo ")
-                                ]),
-                                _: 1
-                              }),
-                              createTextVNode(". Str\xE1nka \u010D\xEDta \u017Eiv\xE9 \u010D\xEDsla z WebSocketu (predvolene verejn\xFD stream) a mapuje ich do BPM, aby bolo vidie\u0165 pr\xE1cu s realtime d\xE1tami a plynulou vizualiz\xE1ciou. V produkcii sa d\xE1 pripoji\u0165 vlastn\xFD .NET WebSocket cez "),
-                              createVNode("code", null, "runtimeConfig.public.wsUrl"),
-                              createTextVNode(". "),
                               createVNode("br"),
                               createVNode("br"),
                               createTextVNode(" Moj\xEDm cie\u013Eom je akt\xEDvne pracova\u0165 na zmyslupln\xFDch projektoch, ktor\xE9 mi umo\u017Enia \u010Falej rozv\xEDja\u0165 svoje schopnosti ako fullstack developer, pracova\u0165 s modern\xFDm frontendom, backendom, API architekt\xFArou a pr\xEDpadne aj integrova\u0165 IoT. ")
@@ -1551,4 +1551,4 @@ _sfc_main.setup = (props, ctx) => {
 const index = /* @__PURE__ */ _export_sfc(_sfc_main, [["ssrRender", _sfc_ssrRender]]);
 
 export { index as default };
-//# sourceMappingURL=index-BZD0tLBe.mjs.map
+//# sourceMappingURL=index-aTMiipmv.mjs.map
