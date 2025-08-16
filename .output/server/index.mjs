@@ -4,11 +4,11 @@ import { t as toNodeListener, d as destr, u as useRuntimeConfig, a as trapUnhand
 import 'node:events';
 import 'node:buffer';
 import 'vue';
+import 'consola';
 import 'node:fs';
 import 'node:url';
 import '@iconify/utils';
 import 'node:crypto';
-import 'consola';
 import 'node:module';
 import 'ipx';
 import 'node:path';

@@ -1,20 +1,26 @@
-import { defineComponent as defineComponent$1, reactive, watchEffect, toRef, inject as inject$1, computed, toValue, Fragment, getCurrentInstance as getCurrentInstance$1, capitalize, warn, watch, onScopeDispose, useId, provide, shallowRef, ref, h, Suspense, unref, readonly, hasInjectionContext, toRaw, createVNode, mergeProps, createElementVNode, effectScope, shallowReactive, createElementBlock, cloneVNode, defineAsyncComponent, normalizeClass, normalizeStyle, createApp, onErrorCaptured, onServerPrefetch, resolveDynamicComponent, isReadonly, isRef, isShallow, isReactive, getCurrentScope, withCtx, toRefs, nextTick, useSSRContext } from 'vue';
+import { defineComponent as defineComponent$1, reactive, watchEffect, toRef, inject as inject$1, computed, toValue, Fragment, getCurrentInstance as getCurrentInstance$1, capitalize, warn, watch, onScopeDispose, useId, provide, shallowRef, ref, h, Suspense, unref, readonly, toRaw, createVNode, mergeProps, createElementVNode, effectScope, shallowReactive, hasInjectionContext, createElementBlock, cloneVNode, defineAsyncComponent, normalizeClass, normalizeStyle, createApp, onErrorCaptured, onServerPrefetch, resolveDynamicComponent, isReadonly, isRef, isShallow, isReactive, getCurrentScope, withCtx, toRefs, nextTick, useSSRContext } from 'vue';
 import { n as klona, o as defuFn, l as createError$1, q as hasProtocol, v as isScriptProtocol, w as joinURL, x as withQuery, y as sanitizeStatusCode, z as getContext, $ as $fetch$1, A as baseURL, B as createHooks, C as executeAsync, D as toRouteMatcher, E as createRouter$1, F as defu } from '../_/nitro.mjs';
 import { RouterView, useRoute as useRoute$1, createMemoryHistory, createRouter, START_LOCATION } from 'vue-router';
 import { _api, addAPIProvider, setCustomIconsLoader } from '@iconify/vue';
 import { ssrRenderSuspense, ssrRenderComponent, ssrRenderVNode } from 'vue/server-renderer';
+import { u as useHead$1, h as headSymbol } from '../routes/renderer.mjs';
 import 'node:http';
 import 'node:https';
 import 'node:events';
 import 'node:buffer';
+import 'consola';
 import 'node:fs';
 import 'node:url';
 import '@iconify/utils';
 import 'node:crypto';
-import 'consola';
 import 'node:module';
 import 'ipx';
 import 'node:path';
+import 'vue-bundle-renderer/runtime';
+import 'unhead/server';
+import 'devalue';
+import 'unhead/utils';
+import 'unhead/plugins';
 
 if (!globalThis.$fetch) {
   globalThis.$fetch = $fetch$1.create({
@@ -387,17 +393,17 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-BHaHrr58.mjs')
+    component: () => import('./index-Bc4ADwxJ.mjs')
   },
   {
     name: "contact",
     path: "/contact",
-    component: () => import('./contact-BcvAO4yE.mjs')
+    component: () => import('./contact-Cez86ZQ1.mjs')
   },
   {
     name: "projects",
     path: "/projects",
-    component: () => import('./projects-CsdbWxfn.mjs')
+    component: () => import('./projects-Bnb61RUg.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {
@@ -728,6 +734,21 @@ const plugin = /* @__PURE__ */ defineNuxtPlugin({
     return { provide: { router } };
   }
 });
+function injectHead(nuxtApp) {
+  var _a;
+  const nuxt = nuxtApp || tryUseNuxtApp();
+  return ((_a = nuxt == null ? void 0 : nuxt.ssrContext) == null ? void 0 : _a.head) || (nuxt == null ? void 0 : nuxt.runWithContext(() => {
+    if (hasInjectionContext()) {
+      return inject$1(headSymbol);
+    }
+  }));
+}
+function useHead(input, options = {}) {
+  const head = injectHead(options.nuxt);
+  if (head) {
+    return useHead$1(input, { head, ...options });
+  }
+}
 defineComponent$1({
   name: "ServerPlaceholder",
   render() {
@@ -1043,7 +1064,7 @@ const revive_payload_server_MVtmlZaQpj6ApFmshWfUWl5PehCebzaBf2NuRMiIbms = /* @__
     }
   }
 });
-const LazyIcon = defineAsyncComponent(() => import('./index-wV96tSCT.mjs').then((r) => r["default"] || r.default || r));
+const LazyIcon = defineAsyncComponent(() => import('./index-CH8rjQa9.mjs').then((r) => r["default"] || r.default || r));
 const lazyGlobalComponents = [
   ["Icon", LazyIcon]
 ];
@@ -1054,6 +1075,24 @@ const components_plugin_z4hgvsiddfKkfXTP6M8M4zG5Cb7sGnDhcryKVM45Di4 = /* @__PURE
       nuxtApp.vueApp.component(name, component);
       nuxtApp.vueApp.component("Lazy" + name, component);
     }
+  }
+});
+const robot_meta_server_bRHpso_4KN_Ec3RJzqCvbuvfZsNOeE_4TgpL8dCNuwk = /* @__PURE__ */ defineNuxtPlugin({
+  setup() {
+    var _a;
+    const event = useRequestEvent();
+    const ctx = (_a = event == null ? void 0 : event.context) == null ? void 0 : _a.robots;
+    if (!ctx)
+      return;
+    useHead({
+      meta: [
+        {
+          "name": "robots",
+          "content": () => ctx.rule || "",
+          "data-hint": () => void 0
+        }
+      ]
+    });
   }
 });
 const pwa_icons_plugin_C24GcIKjcI2zsa8A86om0L2LZjx1chWtzYxD11T7Txg = /* @__PURE__ */ defineNuxtPlugin(() => {
@@ -4145,12 +4184,13 @@ const plugins = [
   _0_siteConfig_tU0SxKrPeVRXWcGu2sOnIfhNDbYiKNfDCvYZhRueG0Q,
   revive_payload_server_MVtmlZaQpj6ApFmshWfUWl5PehCebzaBf2NuRMiIbms,
   components_plugin_z4hgvsiddfKkfXTP6M8M4zG5Cb7sGnDhcryKVM45Di4,
+  robot_meta_server_bRHpso_4KN_Ec3RJzqCvbuvfZsNOeE_4TgpL8dCNuwk,
   pwa_icons_plugin_C24GcIKjcI2zsa8A86om0L2LZjx1chWtzYxD11T7Txg,
   plugin_MeUvTuoKUi51yb_kBguab6hdcExVXeTtZtTg9TZZBB8,
   vuetify_hjFy4UiBVKu2U8_BW9ggkFzfvErKr3wFgTHpa6TF5Ds
 ];
 const layouts = {
-  default: defineAsyncComponent(() => import('./default-Ck1Ewc6g.mjs').then((m) => m.default || m))
+  default: defineAsyncComponent(() => import('./default-BLysStYR.mjs').then((m) => m.default || m))
 };
 const LayoutLoader = defineComponent$1({
   name: "LayoutLoader",
@@ -4472,8 +4512,8 @@ const _sfc_main$1 = {
     const statusMessage = _error.statusMessage ?? (is404 ? "Page Not Found" : "Internal Server Error");
     const description = _error.message || _error.toString();
     const stack = void 0;
-    const _Error404 = defineAsyncComponent(() => import('./error-404-B6KvaG4j.mjs'));
-    const _Error = defineAsyncComponent(() => import('./error-500-84LWLpWv.mjs'));
+    const _Error404 = defineAsyncComponent(() => import('./error-404-B0kYSFH5.mjs'));
+    const _Error = defineAsyncComponent(() => import('./error-500-BE-_QHKt.mjs'));
     const ErrorTemplate = is404 ? _Error404 : _Error;
     return (_ctx, _push, _parent, _attrs) => {
       _push(ssrRenderComponent(unref(ErrorTemplate), mergeProps({ statusCode: unref(statusCode), statusMessage: unref(statusMessage), description: unref(description), stack: unref(stack) }, _attrs), null, _parent));
@@ -4555,5 +4595,5 @@ let entry;
 }
 const entry$1 = (ssrContext) => entry(ssrContext);
 
-export { useAppConfig as $, includes as A, destructComputed as B, isCssColor as C, isParsableColor as D, EventProp as E, parseColor as F, getForeground as G, getCurrentInstanceName as H, IconValue as I, useTheme as J, useIcon as K, flattenFragments as L, isObject as M, onlyDefinedProps as N, getCurrentInstance as O, hasEvent as P, keyCodes as Q, wrapInArray as R, consoleWarn as S, findChildrenWithProvide as T, callEvent as U, useToggleScope as V, pick as W, filterInputAttrs as X, asyncDataDefaults as Y, createError as Z, _export_sfc as _, useNuxtApp as a, useLayoutItem as a0, makeLayoutItemProps as a1, consoleError as a2, defineComponent as a3, deprecate as a4, focusChild as a5, getPropertyFromItem as a6, isPrimitive as a7, omit as a8, useLayout as a9, defer as aa, VApp as ab, __nuxt_component_1 as ac, useRuntimeConfig as b, nuxtLinkDefaults as c, provideTheme as d, entry$1 as default, useRender as e, makeComponentProps as f, genericComponent as g, provideDefaults as h, useRtl as i, breakpoints as j, useResizeObserver as k, clamp as l, makeThemeProps as m, navigateTo as n, convertToUnit as o, propsFactory as p, makeDisplayProps as q, resolveRouteObject as r, useDisplay as s, tryUseNuxtApp as t, useRouter as u, useGoTo as v, focusableChildren as w, deepEqual as x, useLocale as y, useProxiedModel as z };
+export { useAppConfig as $, includes as A, destructComputed as B, isCssColor as C, isParsableColor as D, EventProp as E, parseColor as F, getForeground as G, getCurrentInstanceName as H, IconValue as I, useTheme as J, useIcon as K, flattenFragments as L, isObject as M, onlyDefinedProps as N, getCurrentInstance as O, hasEvent as P, keyCodes as Q, wrapInArray as R, consoleWarn as S, findChildrenWithProvide as T, callEvent as U, useToggleScope as V, pick as W, filterInputAttrs as X, asyncDataDefaults as Y, createError as Z, _export_sfc as _, useRouter as a, useLayoutItem as a0, makeLayoutItemProps as a1, consoleError as a2, defineComponent as a3, deprecate as a4, focusChild as a5, getPropertyFromItem as a6, isPrimitive as a7, omit as a8, useLayout as a9, defer as aa, VApp as ab, __nuxt_component_1 as ac, useNuxtApp as b, useRuntimeConfig as c, nuxtLinkDefaults as d, entry$1 as default, provideTheme as e, useRender as f, genericComponent as g, makeComponentProps as h, provideDefaults as i, useRtl as j, breakpoints as k, useResizeObserver as l, makeThemeProps as m, navigateTo as n, clamp as o, propsFactory as p, convertToUnit as q, resolveRouteObject as r, makeDisplayProps as s, useDisplay as t, useHead as u, useGoTo as v, focusableChildren as w, deepEqual as x, useLocale as y, useProxiedModel as z };
 //# sourceMappingURL=server.mjs.map
