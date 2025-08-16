@@ -41,32 +41,27 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@vite-pwa/nuxt',
     '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
   ],
 
+  // ⚡ PWA nastavenia
   pwa: {
     registerType: 'autoUpdate',
-    // SSR-friendly: žiadny index.html fallback
     workbox: {
       navigateFallback: null,
       globPatterns: ['**/*.{js,css,ico,png,svg,webp}'],
       runtimeCaching: [
-        // HTML navigácie (SSR)
         {
           urlPattern: ({ request }) => request.mode === 'navigate',
           handler: 'NetworkFirst',
-          options: {
-            cacheName: 'html-cache',
-            networkTimeoutSeconds: 5,
-          },
+          options: { cacheName: 'html-cache', networkTimeoutSeconds: 5 },
         },
-        // Bundly a workeri
         {
           urlPattern: ({ request }) =>
             ['style', 'script', 'worker'].includes(request.destination),
           handler: 'StaleWhileRevalidate',
           options: { cacheName: 'asset-cache' },
         },
-        // Obrázky a fonty
         {
           urlPattern: ({ request }) =>
             ['image', 'font'].includes(request.destination),
@@ -83,7 +78,7 @@ export default defineNuxtConfig({
       short_name: 'MM Portfolio',
       description:
         'Portfólio vývojára s reálnym backendom, API a moderným frontendom.',
-      theme_color: '#424242', // zjednotené s meta theme-color
+      theme_color: '#424242',
       background_color: '#f4f4f4',
       display: 'standalone',
       start_url: '/',
@@ -95,6 +90,7 @@ export default defineNuxtConfig({
     },
   },
 
+  // 🌍 SEO nastavenia
   app: {
     head: {
       htmlAttrs: { lang: 'sk' },
@@ -105,7 +101,6 @@ export default defineNuxtConfig({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'theme-color', content: '#424242' },
 
-        // ✅ primárny description pre SEO
         { property: 'article:author', content: 'Matus Matko' },
         { property: 'article:published_time', content: '2025-08-16T09:00:00Z' },
         {
@@ -114,7 +109,7 @@ export default defineNuxtConfig({
             'Portfólio vývojára: Nuxt 3 + .NET WebSocket demo, reálne nasadenie (PM2, Nginx), PWA, SEO a prístupnosť.',
         },
 
-        // ✅ Open Graph
+        // Open Graph
         { property: 'og:type', content: 'website' },
         { property: 'og:url', content: 'https://mm-smart.eu/' },
         {
@@ -131,7 +126,7 @@ export default defineNuxtConfig({
           content: 'https://mm-smart.eu/social-preview.jpg',
         },
 
-        // ✅ Twitter
+        // Twitter
         { name: 'twitter:card', content: 'summary_large_image' },
         {
           name: 'twitter:title',
@@ -150,8 +145,23 @@ export default defineNuxtConfig({
     },
   },
 
+  // ✅ Nuxt Site Config (pre sitemap/robots)
   site: {
     url: 'https://mm-smart.eu',
-    name: 'MM Smart', // voliteľné, pre XSL UI
+    name: 'MM Smart',
+  },
+
+  // ✅ Sitemap nastavenia
+  sitemap: {
+    //gzip: true,
+  },
+
+  // ✅ Robots.txt nastavenia
+  robots: {
+    groups: [
+      { userAgent: '*', disallow: ['/api/', '/admin/', '/dev/'] },
+      { userAgent: '*', allow: ['/'] },
+    ],
+    sitemap: ['https://mm-smart.eu/sitemap.xml'],
   },
 });
