@@ -1,5 +1,5 @@
-import { defineComponent as defineComponent$1, ref, computed, toRaw, capitalize, getCurrentInstance as getCurrentInstance$1, readonly, inject as inject$1, toRef, warn, watch, onScopeDispose, useId, provide, shallowRef, h, Suspense, reactive, watchEffect, unref, hasInjectionContext, toValue, Fragment, effectScope, shallowReactive, createVNode, mergeProps, createElementVNode, createElementBlock, cloneVNode, defineAsyncComponent, normalizeClass, normalizeStyle, createApp, onErrorCaptured, onServerPrefetch, resolveDynamicComponent, isReadonly, isRef, isShallow, isReactive, getCurrentScope, withCtx, toRefs, nextTick, useSSRContext } from 'vue';
-import { m as klona, n as defuFn, k as createError$1, o as hasProtocol, q as isScriptProtocol, v as joinURL, w as withQuery, x as sanitizeStatusCode, y as getContext, $ as $fetch$1, z as baseURL, A as createHooks, B as executeAsync, C as toRouteMatcher, D as createRouter$1, E as defu } from '../_/nitro.mjs';
+import { defineComponent as defineComponent$1, reactive, watchEffect, toRef, inject as inject$1, computed, toValue, Fragment, getCurrentInstance as getCurrentInstance$1, capitalize, warn, watch, onScopeDispose, useId, provide, shallowRef, ref, h, Suspense, unref, readonly, hasInjectionContext, toRaw, createVNode, mergeProps, createElementVNode, effectScope, shallowReactive, createElementBlock, cloneVNode, defineAsyncComponent, normalizeClass, normalizeStyle, createApp, onErrorCaptured, onServerPrefetch, resolveDynamicComponent, isReadonly, isRef, isShallow, isReactive, getCurrentScope, withCtx, toRefs, nextTick, useSSRContext } from 'vue';
+import { n as klona, o as defuFn, l as createError$1, q as hasProtocol, v as isScriptProtocol, w as joinURL, x as withQuery, y as sanitizeStatusCode, z as getContext, $ as $fetch$1, A as baseURL, B as createHooks, C as executeAsync, D as toRouteMatcher, E as createRouter$1, F as defu } from '../_/nitro.mjs';
 import { RouterView, useRoute as useRoute$1, createMemoryHistory, createRouter, START_LOCATION } from 'vue-router';
 import { _api, addAPIProvider, setCustomIconsLoader } from '@iconify/vue';
 import { ssrRenderSuspense, ssrRenderComponent, ssrRenderVNode } from 'vue/server-renderer';
@@ -387,22 +387,17 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-j-P_vnsh.mjs')
-  },
-  {
-    name: "ws-bpm",
-    path: "/ws-bpm",
-    component: () => import('./ws-bpm-CAfoExcy.mjs')
+    component: () => import('./index-BHaHrr58.mjs')
   },
   {
     name: "contact",
     path: "/contact",
-    component: () => import('./contact-BF9273Vk.mjs')
+    component: () => import('./contact-BcvAO4yE.mjs')
   },
   {
     name: "projects",
     path: "/projects",
-    component: () => import('./projects-tkogMzH2.mjs')
+    component: () => import('./projects-CsdbWxfn.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {
@@ -4155,7 +4150,7 @@ const plugins = [
   vuetify_hjFy4UiBVKu2U8_BW9ggkFzfvErKr3wFgTHpa6TF5Ds
 ];
 const layouts = {
-  default: defineAsyncComponent(() => import('./default-DHX59uO5.mjs').then((m) => m.default || m))
+  default: defineAsyncComponent(() => import('./default-Ck1Ewc6g.mjs').then((m) => m.default || m))
 };
 const LayoutLoader = defineComponent$1({
   name: "LayoutLoader",
@@ -4560,5 +4555,5 @@ let entry;
 }
 const entry$1 = (ssrContext) => entry(ssrContext);
 
-export { useAppConfig as $, useProxiedModel as A, clamp as B, hasEvent as C, deepEqual as D, getCurrentInstance as E, isObject as F, keyCodes as G, onlyDefinedProps as H, IconValue as I, breakpoints as J, useResizeObserver as K, makeDisplayProps as L, useDisplay as M, useGoTo as N, focusableChildren as O, useLocale as P, EventProp as Q, wrapInArray as R, consoleWarn as S, findChildrenWithProvide as T, callEvent as U, useToggleScope as V, pick as W, filterInputAttrs as X, asyncDataDefaults as Y, createError as Z, _export_sfc as _, useNuxtApp as a, useLayoutItem as a0, makeLayoutItemProps as a1, consoleError as a2, defineComponent as a3, deprecate as a4, focusChild as a5, getPropertyFromItem as a6, isPrimitive as a7, omit as a8, useLayout as a9, defer as aa, VApp as ab, __nuxt_component_1 as ac, useRuntimeConfig as b, nuxtLinkDefaults as c, provideTheme as d, entry$1 as default, useRender as e, makeComponentProps as f, genericComponent as g, getCurrentInstanceName as h, includes as i, destructComputed as j, isCssColor as k, isParsableColor as l, makeThemeProps as m, navigateTo as n, parseColor as o, propsFactory as p, getForeground as q, resolveRouteObject as r, provideDefaults as s, tryUseNuxtApp as t, useRouter as u, convertToUnit as v, useTheme as w, useIcon as x, flattenFragments as y, useRtl as z };
+export { useAppConfig as $, includes as A, destructComputed as B, isCssColor as C, isParsableColor as D, EventProp as E, parseColor as F, getForeground as G, getCurrentInstanceName as H, IconValue as I, useTheme as J, useIcon as K, flattenFragments as L, isObject as M, onlyDefinedProps as N, getCurrentInstance as O, hasEvent as P, keyCodes as Q, wrapInArray as R, consoleWarn as S, findChildrenWithProvide as T, callEvent as U, useToggleScope as V, pick as W, filterInputAttrs as X, asyncDataDefaults as Y, createError as Z, _export_sfc as _, useNuxtApp as a, useLayoutItem as a0, makeLayoutItemProps as a1, consoleError as a2, defineComponent as a3, deprecate as a4, focusChild as a5, getPropertyFromItem as a6, isPrimitive as a7, omit as a8, useLayout as a9, defer as aa, VApp as ab, __nuxt_component_1 as ac, useRuntimeConfig as b, nuxtLinkDefaults as c, provideTheme as d, entry$1 as default, useRender as e, makeComponentProps as f, genericComponent as g, provideDefaults as h, useRtl as i, breakpoints as j, useResizeObserver as k, clamp as l, makeThemeProps as m, navigateTo as n, convertToUnit as o, propsFactory as p, makeDisplayProps as q, resolveRouteObject as r, useDisplay as s, tryUseNuxtApp as t, useRouter as u, useGoTo as v, focusableChildren as w, deepEqual as x, useLocale as y, useProxiedModel as z };
 //# sourceMappingURL=server.mjs.map

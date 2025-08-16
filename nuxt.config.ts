@@ -106,6 +106,8 @@ export default defineNuxtConfig({
         { name: 'theme-color', content: '#424242' },
 
         // ✅ primárny description pre SEO
+        { property: 'article:author', content: 'Matus Matko' },
+        { property: 'article:published_time', content: '2025-08-16T09:00:00Z' },
         {
           name: 'description',
           content:

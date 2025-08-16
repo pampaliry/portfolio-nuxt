@@ -24,7 +24,6 @@ const sitemap_xml = defineEventHandler((event) => {
   const routes = [
     { loc: "/", changefreq: "weekly", priority: 0.8 },
     { loc: "/projects", changefreq: "weekly", priority: 0.7 },
-    { loc: "/ws-bpm", changefreq: "daily", priority: 0.8 },
     { loc: "/contact", changefreq: "monthly", priority: 0.5 }
   ];
   const lastmod = (/* @__PURE__ */ new Date()).toISOString();
