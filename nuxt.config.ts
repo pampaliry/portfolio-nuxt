@@ -4,7 +4,10 @@ import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
 
 export default defineNuxtConfig({
   runtimeConfig: {
-    public: { wsUrl: process.env.NUXT_PUBLIC_WS_URL || '' },
+    public: {
+      wsUrl: process.env.NUXT_PUBLIC_WS_URL || '',
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://mm-smart.eu',
+    },
     mailUser: process.env.MAIL_USER,
     mailPass: process.env.MAIL_PASS,
     mailTo: process.env.MAIL_TO,
@@ -37,16 +40,17 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/image',
     '@vite-pwa/nuxt',
+    '@nuxtjs/sitemap',
   ],
 
   pwa: {
     registerType: 'autoUpdate',
-    // SSR-friendly Workbox nastavenie (žiadny index.html fallback)
+    // SSR-friendly: žiadny index.html fallback
     workbox: {
       navigateFallback: null,
       globPatterns: ['**/*.{js,css,ico,png,svg,webp}'],
       runtimeCaching: [
-        // HTML navigácie – rieši SSR cez sieť (bez precache fallbacku)
+        // HTML navigácie (SSR)
         {
           urlPattern: ({ request }) => request.mode === 'navigate',
           handler: 'NetworkFirst',
@@ -55,24 +59,21 @@ export default defineNuxtConfig({
             networkTimeoutSeconds: 5,
           },
         },
-        // Bundly a workeri – SWR
+        // Bundly a workeri
         {
           urlPattern: ({ request }) =>
             ['style', 'script', 'worker'].includes(request.destination),
           handler: 'StaleWhileRevalidate',
           options: { cacheName: 'asset-cache' },
         },
-        // Obrázky a fonty – CacheFirst
+        // Obrázky a fonty
         {
           urlPattern: ({ request }) =>
             ['image', 'font'].includes(request.destination),
           handler: 'CacheFirst',
           options: {
             cacheName: 'static-cache',
-            expiration: {
-              maxEntries: 100,
-              maxAgeSeconds: 60 * 60 * 24 * 30, // 30 dní
-            },
+            expiration: { maxEntries: 100, maxAgeSeconds: 60 * 60 * 24 * 30 },
           },
         },
       ],
@@ -82,7 +83,7 @@ export default defineNuxtConfig({
       short_name: 'MM Portfolio',
       description:
         'Portfólio vývojára s reálnym backendom, API a moderným frontendom.',
-      theme_color: '#ffffff',
+      theme_color: '#424242', // zjednotené s meta theme-color
       background_color: '#f4f4f4',
       display: 'standalone',
       start_url: '/',
@@ -98,12 +99,22 @@ export default defineNuxtConfig({
     head: {
       htmlAttrs: { lang: 'sk' },
       title: 'Matus Matko – Fullstack Developer Portfolio',
+      link: [{ rel: 'canonical', href: 'https://mm-smart.eu/' }],
       meta: [
-        { name: 'theme-color', content: '#424242' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'theme-color', content: '#424242' },
 
-        // Open Graph
+        // ✅ primárny description pre SEO
+        {
+          name: 'description',
+          content:
+            'Portfólio vývojára: Nuxt 3 + .NET WebSocket demo, reálne nasadenie (PM2, Nginx), PWA, SEO a prístupnosť.',
+        },
+
+        // ✅ Open Graph
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: 'https://mm-smart.eu/' },
         {
           property: 'og:title',
           content: 'Matus Matko – Fullstack Developer Portfolio',
@@ -118,7 +129,7 @@ export default defineNuxtConfig({
           content: 'https://mm-smart.eu/social-preview.jpg',
         },
 
-        // Twitter
+        // ✅ Twitter
         { name: 'twitter:card', content: 'summary_large_image' },
         {
           name: 'twitter:title',
@@ -135,5 +146,10 @@ export default defineNuxtConfig({
         },
       ],
     },
+  },
+
+  site: {
+    url: 'https://mm-smart.eu',
+    name: 'MM Smart', // voliteľné, pre XSL UI
   },
 });
