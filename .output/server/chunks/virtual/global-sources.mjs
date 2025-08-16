@@ -20,9 +20,6 @@ const sources = [
                 "loc": "/"
             },
             {
-                "loc": "/ws-bpm"
-            },
-            {
                 "loc": "/contact"
             },
             {
