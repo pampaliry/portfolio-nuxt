@@ -1,5 +1,5 @@
-import { defineComponent as defineComponent$1, ref, computed, toRaw, capitalize, getCurrentInstance as getCurrentInstance$1, readonly, inject as inject$1, toRef, warn, watch, onScopeDispose, useId, provide, shallowRef, h, Suspense, reactive, watchEffect, unref, hasInjectionContext, toValue, Fragment, effectScope, shallowReactive, createVNode, mergeProps, createElementVNode, defineAsyncComponent, normalizeClass, normalizeStyle, createApp, onErrorCaptured, onServerPrefetch, resolveDynamicComponent, isReadonly, isRef, isShallow, isReactive, getCurrentScope, withCtx, toRefs, nextTick, useSSRContext } from 'vue';
-import { j as createError$1, l as klona, m as defuFn, n as hasProtocol, o as isScriptProtocol, q as joinURL, w as withQuery, v as sanitizeStatusCode, x as getContext, $ as $fetch$1, y as baseURL, z as createHooks, A as executeAsync, B as toRouteMatcher, C as createRouter$1, D as defu } from '../_/nitro.mjs';
+import { defineComponent as defineComponent$1, ref, computed, toRaw, capitalize, getCurrentInstance as getCurrentInstance$1, readonly, inject as inject$1, toRef, warn, watch, onScopeDispose, useId, provide, shallowRef, h, Suspense, reactive, watchEffect, unref, hasInjectionContext, toValue, Fragment, effectScope, shallowReactive, createVNode, mergeProps, createElementVNode, createElementBlock, cloneVNode, defineAsyncComponent, normalizeClass, normalizeStyle, createApp, onErrorCaptured, onServerPrefetch, resolveDynamicComponent, isReadonly, isRef, isShallow, isReactive, getCurrentScope, withCtx, toRefs, nextTick, useSSRContext } from 'vue';
+import { m as klona, n as defuFn, k as createError$1, o as hasProtocol, q as isScriptProtocol, v as joinURL, w as withQuery, x as sanitizeStatusCode, y as getContext, $ as $fetch$1, z as baseURL, A as createHooks, B as executeAsync, C as toRouteMatcher, D as createRouter$1, E as defu } from '../_/nitro.mjs';
 import { RouterView, useRoute as useRoute$1, createMemoryHistory, createRouter, START_LOCATION } from 'vue-router';
 import { _api, addAPIProvider, setCustomIconsLoader } from '@iconify/vue';
 import { ssrRenderSuspense, ssrRenderComponent, ssrRenderVNode } from 'vue/server-renderer';
@@ -12,6 +12,7 @@ import 'node:url';
 import '@iconify/utils';
 import 'node:crypto';
 import 'consola';
+import 'node:module';
 import 'ipx';
 import 'node:path';
 
@@ -386,22 +387,22 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-aTMiipmv.mjs')
+    component: () => import('./index-j-P_vnsh.mjs')
   },
   {
     name: "ws-bpm",
     path: "/ws-bpm",
-    component: () => import('./ws-bpm-BtTkT7p9.mjs')
+    component: () => import('./ws-bpm-CAfoExcy.mjs')
   },
   {
     name: "contact",
     path: "/contact",
-    component: () => import('./contact-BJSJSIz0.mjs')
+    component: () => import('./contact-BF9273Vk.mjs')
   },
   {
     name: "projects",
     path: "/projects",
-    component: () => import('./projects-Cnv8eFHT.mjs')
+    component: () => import('./projects-tkogMzH2.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {
@@ -732,54 +733,79 @@ const plugin = /* @__PURE__ */ defineNuxtPlugin({
     return { provide: { router } };
   }
 });
+defineComponent$1({
+  name: "ServerPlaceholder",
+  render() {
+    return createElementBlock("div");
+  }
+});
+const clientOnlySymbol = Symbol.for("nuxt:client-only");
+defineComponent$1({
+  name: "ClientOnly",
+  inheritAttrs: false,
+  props: ["fallback", "placeholder", "placeholderTag", "fallbackTag"],
+  setup(props, { slots, attrs }) {
+    const mounted = shallowRef(false);
+    const vm = getCurrentInstance$1();
+    if (vm) {
+      vm._nuxtClientOnly = true;
+    }
+    provide(clientOnlySymbol, true);
+    return () => {
+      var _a;
+      if (mounted.value) {
+        const vnodes = (_a = slots.default) == null ? void 0 : _a.call(slots);
+        if (vnodes && vnodes.length === 1) {
+          return [cloneVNode(vnodes[0], attrs)];
+        }
+        return vnodes;
+      }
+      const slot = slots.fallback || slots.placeholder;
+      if (slot) {
+        return h(slot);
+      }
+      const fallbackStr = props.fallback || props.placeholder || "";
+      const fallbackTag = props.fallbackTag || props.placeholderTag || "span";
+      return createElementBlock(fallbackTag, attrs, fallbackStr);
+    };
+  }
+});
+const useStateKeyPrefix = "$s";
+function useState(...args) {
+  const autoKey = typeof args[args.length - 1] === "string" ? args.pop() : void 0;
+  if (typeof args[0] !== "string") {
+    args.unshift(autoKey);
+  }
+  const [_key, init] = args;
+  if (!_key || typeof _key !== "string") {
+    throw new TypeError("[nuxt] [useState] key must be a string: " + _key);
+  }
+  if (init !== void 0 && typeof init !== "function") {
+    throw new Error("[nuxt] [useState] init must be a function: " + init);
+  }
+  const key = useStateKeyPrefix + _key;
+  const nuxtApp = useNuxtApp();
+  const state = toRef(nuxtApp.payload.state, key);
+  if (state.value === void 0 && init) {
+    const initialValue = init();
+    if (isRef(initialValue)) {
+      nuxtApp.payload.state[key] = initialValue;
+      return initialValue;
+    }
+    state.value = initialValue;
+  }
+  return state;
+}
+function useRequestEvent(nuxtApp) {
+  var _a;
+  nuxtApp || (nuxtApp = useNuxtApp());
+  return (_a = nuxtApp.ssrContext) == null ? void 0 : _a.event;
+}
 function definePayloadReducer(name, reduce) {
   {
     useNuxtApp().ssrContext._payloadReducers[name] = reduce;
   }
 }
-const reducers = [
-  ["NuxtError", (data) => isNuxtError(data) && data.toJSON()],
-  ["EmptyShallowRef", (data) => isRef(data) && isShallow(data) && !data.value && (typeof data.value === "bigint" ? "0n" : JSON.stringify(data.value) || "_")],
-  ["EmptyRef", (data) => isRef(data) && !data.value && (typeof data.value === "bigint" ? "0n" : JSON.stringify(data.value) || "_")],
-  ["ShallowRef", (data) => isRef(data) && isShallow(data) && data.value],
-  ["ShallowReactive", (data) => isReactive(data) && isShallow(data) && toRaw(data)],
-  ["Ref", (data) => isRef(data) && data.value],
-  ["Reactive", (data) => isReactive(data) && toRaw(data)]
-];
-const revive_payload_server_MVtmlZaQpj6ApFmshWfUWl5PehCebzaBf2NuRMiIbms = /* @__PURE__ */ defineNuxtPlugin({
-  name: "nuxt:revive-payload:server",
-  setup() {
-    for (const [reducer, fn] of reducers) {
-      definePayloadReducer(reducer, fn);
-    }
-  }
-});
-const LazyIcon = defineAsyncComponent(() => import('./index-Bm1vdHJ4.mjs').then((r) => r["default"] || r.default || r));
-const lazyGlobalComponents = [
-  ["Icon", LazyIcon]
-];
-const components_plugin_z4hgvsiddfKkfXTP6M8M4zG5Cb7sGnDhcryKVM45Di4 = /* @__PURE__ */ defineNuxtPlugin({
-  name: "nuxt:global-components",
-  setup(nuxtApp) {
-    for (const [name, component] of lazyGlobalComponents) {
-      nuxtApp.vueApp.component(name, component);
-      nuxtApp.vueApp.component("Lazy" + name, component);
-    }
-  }
-});
-const pwa_icons_plugin_C24GcIKjcI2zsa8A86om0L2LZjx1chWtzYxD11T7Txg = /* @__PURE__ */ defineNuxtPlugin(() => {
-  return {
-    provide: {
-      pwaIcons: {
-        transparent: {},
-        maskable: {},
-        favicon: {},
-        apple: {},
-        appleSplashScreen: {}
-      }
-    }
-  };
-});
 const inlineConfig = {
   "nuxt": {},
   "icon": {
@@ -983,6 +1009,71 @@ function useAppConfig() {
   nuxtApp._appConfig || (nuxtApp._appConfig = klona(__appConfig));
   return nuxtApp._appConfig;
 }
+const _0_siteConfig_tU0SxKrPeVRXWcGu2sOnIfhNDbYiKNfDCvYZhRueG0Q = /* @__PURE__ */ defineNuxtPlugin({
+  name: "nuxt-site-config:init",
+  enforce: "pre",
+  async setup(nuxtApp) {
+    var _a, _b;
+    const stack = (_b = (_a = useRequestEvent()) == null ? void 0 : _a.context) == null ? void 0 : _b.siteConfig;
+    const state = useState("site-config");
+    {
+      nuxtApp.hooks.hook("app:rendered", () => {
+        state.value = stack == null ? void 0 : stack.get({
+          debug: (/* @__PURE__ */ useRuntimeConfig())["nuxt-site-config"].debug,
+          resolveRefs: true
+        });
+      });
+    }
+    return {
+      provide: {
+        nuxtSiteConfig: stack
+      }
+    };
+  }
+});
+const reducers = [
+  ["NuxtError", (data) => isNuxtError(data) && data.toJSON()],
+  ["EmptyShallowRef", (data) => isRef(data) && isShallow(data) && !data.value && (typeof data.value === "bigint" ? "0n" : JSON.stringify(data.value) || "_")],
+  ["EmptyRef", (data) => isRef(data) && !data.value && (typeof data.value === "bigint" ? "0n" : JSON.stringify(data.value) || "_")],
+  ["ShallowRef", (data) => isRef(data) && isShallow(data) && data.value],
+  ["ShallowReactive", (data) => isReactive(data) && isShallow(data) && toRaw(data)],
+  ["Ref", (data) => isRef(data) && data.value],
+  ["Reactive", (data) => isReactive(data) && toRaw(data)]
+];
+const revive_payload_server_MVtmlZaQpj6ApFmshWfUWl5PehCebzaBf2NuRMiIbms = /* @__PURE__ */ defineNuxtPlugin({
+  name: "nuxt:revive-payload:server",
+  setup() {
+    for (const [reducer, fn] of reducers) {
+      definePayloadReducer(reducer, fn);
+    }
+  }
+});
+const LazyIcon = defineAsyncComponent(() => import('./index-wV96tSCT.mjs').then((r) => r["default"] || r.default || r));
+const lazyGlobalComponents = [
+  ["Icon", LazyIcon]
+];
+const components_plugin_z4hgvsiddfKkfXTP6M8M4zG5Cb7sGnDhcryKVM45Di4 = /* @__PURE__ */ defineNuxtPlugin({
+  name: "nuxt:global-components",
+  setup(nuxtApp) {
+    for (const [name, component] of lazyGlobalComponents) {
+      nuxtApp.vueApp.component(name, component);
+      nuxtApp.vueApp.component("Lazy" + name, component);
+    }
+  }
+});
+const pwa_icons_plugin_C24GcIKjcI2zsa8A86om0L2LZjx1chWtzYxD11T7Txg = /* @__PURE__ */ defineNuxtPlugin(() => {
+  return {
+    provide: {
+      pwaIcons: {
+        transparent: {},
+        maskable: {},
+        favicon: {},
+        apple: {},
+        appleSplashScreen: {}
+      }
+    }
+  };
+});
 const plugin_MeUvTuoKUi51yb_kBguab6hdcExVXeTtZtTg9TZZBB8 = /* @__PURE__ */ defineNuxtPlugin({
   name: "@nuxt/icon",
   setup() {
@@ -4056,6 +4147,7 @@ const vuetify_hjFy4UiBVKu2U8_BW9ggkFzfvErKr3wFgTHpa6TF5Ds = /* @__PURE__ */ defi
 const plugins = [
   unhead_k2P3m_ZDyjlr2mMYnoDPwavjsDN8hBlk9cFai0bbopU,
   plugin,
+  _0_siteConfig_tU0SxKrPeVRXWcGu2sOnIfhNDbYiKNfDCvYZhRueG0Q,
   revive_payload_server_MVtmlZaQpj6ApFmshWfUWl5PehCebzaBf2NuRMiIbms,
   components_plugin_z4hgvsiddfKkfXTP6M8M4zG5Cb7sGnDhcryKVM45Di4,
   pwa_icons_plugin_C24GcIKjcI2zsa8A86om0L2LZjx1chWtzYxD11T7Txg,
@@ -4063,7 +4155,7 @@ const plugins = [
   vuetify_hjFy4UiBVKu2U8_BW9ggkFzfvErKr3wFgTHpa6TF5Ds
 ];
 const layouts = {
-  default: defineAsyncComponent(() => import('./default-miv2oh6F.mjs').then((m) => m.default || m))
+  default: defineAsyncComponent(() => import('./default-DHX59uO5.mjs').then((m) => m.default || m))
 };
 const LayoutLoader = defineComponent$1({
   name: "LayoutLoader",
@@ -4385,8 +4477,8 @@ const _sfc_main$1 = {
     const statusMessage = _error.statusMessage ?? (is404 ? "Page Not Found" : "Internal Server Error");
     const description = _error.message || _error.toString();
     const stack = void 0;
-    const _Error404 = defineAsyncComponent(() => import('./error-404-DiWfdXMu.mjs'));
-    const _Error = defineAsyncComponent(() => import('./error-500-BYqC21nq.mjs'));
+    const _Error404 = defineAsyncComponent(() => import('./error-404-B6KvaG4j.mjs'));
+    const _Error = defineAsyncComponent(() => import('./error-500-84LWLpWv.mjs'));
     const ErrorTemplate = is404 ? _Error404 : _Error;
     return (_ctx, _push, _parent, _attrs) => {
       _push(ssrRenderComponent(unref(ErrorTemplate), mergeProps({ statusCode: unref(statusCode), statusMessage: unref(statusMessage), description: unref(description), stack: unref(stack) }, _attrs), null, _parent));
@@ -4468,5 +4560,5 @@ let entry;
 }
 const entry$1 = (ssrContext) => entry(ssrContext);
 
-export { createError as $, useProxiedModel as A, clamp as B, hasEvent as C, deepEqual as D, getCurrentInstance as E, isObject as F, keyCodes as G, onlyDefinedProps as H, IconValue as I, breakpoints as J, useResizeObserver as K, makeDisplayProps as L, useDisplay as M, useGoTo as N, focusableChildren as O, useLocale as P, EventProp as Q, wrapInArray as R, consoleWarn as S, findChildrenWithProvide as T, callEvent as U, useToggleScope as V, pick as W, filterInputAttrs as X, useAppConfig as Y, asyncDataDefaults as Z, _export_sfc as _, useNuxtApp as a, useLayoutItem as a0, makeLayoutItemProps as a1, consoleError as a2, defineComponent as a3, deprecate as a4, focusChild as a5, getPropertyFromItem as a6, isPrimitive as a7, omit as a8, useLayout as a9, defer as aa, VApp as ab, __nuxt_component_1 as ac, useRuntimeConfig as b, nuxtLinkDefaults as c, provideTheme as d, entry$1 as default, useRender as e, makeComponentProps as f, genericComponent as g, getCurrentInstanceName as h, includes as i, destructComputed as j, isCssColor as k, isParsableColor as l, makeThemeProps as m, navigateTo as n, parseColor as o, propsFactory as p, getForeground as q, resolveRouteObject as r, provideDefaults as s, tryUseNuxtApp as t, useRouter as u, convertToUnit as v, useTheme as w, useIcon as x, flattenFragments as y, useRtl as z };
+export { useAppConfig as $, useProxiedModel as A, clamp as B, hasEvent as C, deepEqual as D, getCurrentInstance as E, isObject as F, keyCodes as G, onlyDefinedProps as H, IconValue as I, breakpoints as J, useResizeObserver as K, makeDisplayProps as L, useDisplay as M, useGoTo as N, focusableChildren as O, useLocale as P, EventProp as Q, wrapInArray as R, consoleWarn as S, findChildrenWithProvide as T, callEvent as U, useToggleScope as V, pick as W, filterInputAttrs as X, asyncDataDefaults as Y, createError as Z, _export_sfc as _, useNuxtApp as a, useLayoutItem as a0, makeLayoutItemProps as a1, consoleError as a2, defineComponent as a3, deprecate as a4, focusChild as a5, getPropertyFromItem as a6, isPrimitive as a7, omit as a8, useLayout as a9, defer as aa, VApp as ab, __nuxt_component_1 as ac, useRuntimeConfig as b, nuxtLinkDefaults as c, provideTheme as d, entry$1 as default, useRender as e, makeComponentProps as f, genericComponent as g, getCurrentInstanceName as h, includes as i, destructComputed as j, isCssColor as k, isParsableColor as l, makeThemeProps as m, navigateTo as n, parseColor as o, propsFactory as p, getForeground as q, resolveRouteObject as r, provideDefaults as s, tryUseNuxtApp as t, useRouter as u, convertToUnit as v, useTheme as w, useIcon as x, flattenFragments as y, useRtl as z };
 //# sourceMappingURL=server.mjs.map
