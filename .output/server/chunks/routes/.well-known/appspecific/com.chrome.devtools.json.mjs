@@ -9,7 +9,6 @@ import 'node:fs';
 import 'node:url';
 import '@iconify/utils';
 import 'node:crypto';
-import 'node:module';
 import 'ipx';
 import 'node:path';
 

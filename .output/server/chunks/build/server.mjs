@@ -13,7 +13,6 @@ import 'node:fs';
 import 'node:url';
 import '@iconify/utils';
 import 'node:crypto';
-import 'node:module';
 import 'ipx';
 import 'node:path';
 import 'vue-bundle-renderer/runtime';
@@ -393,12 +392,12 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-Bc4ADwxJ.mjs')
+    component: () => import('./index-Ciqrl2ST.mjs')
   },
   {
     name: "contact",
     path: "/contact",
-    component: () => import('./contact-Cez86ZQ1.mjs')
+    component: () => import('./contact-Cc9Vja9B.mjs')
   },
   {
     name: "projects",
@@ -4190,7 +4189,7 @@ const plugins = [
   vuetify_hjFy4UiBVKu2U8_BW9ggkFzfvErKr3wFgTHpa6TF5Ds
 ];
 const layouts = {
-  default: defineAsyncComponent(() => import('./default-BLysStYR.mjs').then((m) => m.default || m))
+  default: defineAsyncComponent(() => import('./default-CjHT6t9h.mjs').then((m) => m.default || m))
 };
 const LayoutLoader = defineComponent$1({
   name: "LayoutLoader",
