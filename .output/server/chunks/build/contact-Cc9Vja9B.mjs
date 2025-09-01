@@ -1,6 +1,6 @@
 import { withCtx, createVNode, defineComponent, reactive, ref, watch, mergeProps, createTextVNode, createBlock, createCommentVNode, openBlock, withModifiers, createElementVNode, normalizeStyle, normalizeClass, computed, Fragment, withDirectives, cloneVNode, shallowRef, watchEffect, vModelText, toRef, provide, markRaw, nextTick, useId, vShow, unref, inject, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrRenderComponent } from 'vue/server-renderer';
-import { b as VContainer, V as VRow, a as VCol, c as VBtn } from './VBtn-Bd1xqV3-.mjs';
+import { b as VContainer, V as VRow, a as VCol, c as VBtn } from './VBtn-CEpaUE93.mjs';
 import { _ as _export_sfc, g as genericComponent, p as propsFactory, f as useRender, z as useProxiedModel, X as filterInputAttrs, e as provideTheme, y as useLocale, h as makeComponentProps, S as consoleWarn, H as getCurrentInstanceName, j as useRtl, q as convertToUnit, U as callEvent, o as clamp, m as makeThemeProps, I as IconValue, E as EventProp, W as pick, R as wrapInArray, O as getCurrentInstance, V as useToggleScope } from './server.mjs';
 import { I as Intersect, n as useVariant, o as useDensity, b as useDimension, c as useElevation, d as useLocation, e as usePosition, f as useRounded, p as useTextColor, q as genOverlays, V as VIcon, r as VDefaultsProvider, s as createSimpleFunctional, t as useLoader, u as useBackgroundColor, L as LoaderSlot, v as VExpandXTransition, M as MaybeTransition, w as makeVariantProps, m as makeTagProps, g as makeRoundedProps, h as makePositionProps, i as makeLocationProps, j as makeElevationProps, k as makeDimensionProps, x as makeDensityProps, y as makeLoaderProps, z as makeTransitionProps$1, A as VSlideYTransition } from './index-D_XWh9S8.mjs';
 import { V as VCard, a as VCardTitle, b as VCardText } from './VCard-BjXzYz1U.mjs';
@@ -14,7 +14,6 @@ import 'node:fs';
 import 'node:url';
 import '@iconify/utils';
 import 'node:crypto';
-import 'node:module';
 import 'ipx';
 import 'node:path';
 import 'vue-router';
@@ -2501,4 +2500,4 @@ _sfc_main.setup = (props, ctx) => {
 const contact = /* @__PURE__ */ _export_sfc(_sfc_main, [["ssrRender", _sfc_ssrRender]]);
 
 export { contact as default };
-//# sourceMappingURL=contact-Cez86ZQ1.mjs.map
+//# sourceMappingURL=contact-Cc9Vja9B.mjs.map

@@ -720,4 +720,4 @@ const VBtn = genericComponent()({
 });
 
 export { VRow as V, VCol as a, VContainer as b, VBtn as c, makeVBtnProps as m };
-//# sourceMappingURL=VBtn-Bd1xqV3-.mjs.map
+//# sourceMappingURL=VBtn-CEpaUE93.mjs.map

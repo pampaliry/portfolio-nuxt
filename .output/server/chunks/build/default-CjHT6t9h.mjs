@@ -2,7 +2,7 @@ import { defineComponent, ref, withCtx, createVNode, createTextVNode, toDisplayS
 import { ssrRenderComponent, ssrRenderList, ssrInterpolate, ssrRenderAttrs } from 'vue/server-renderer';
 import { ab as VApp, g as genericComponent, _ as _export_sfc, ac as __nuxt_component_1, p as propsFactory, z as useProxiedModel, V as useToggleScope, a0 as useLayoutItem, f as useRender, j as useRtl, e as provideTheme, t as useDisplay, i as provideDefaults, a4 as deprecate, a9 as useLayout, l as useResizeObserver, q as convertToUnit, a1 as makeLayoutItemProps, o as clamp, h as makeComponentProps, m as makeThemeProps, s as makeDisplayProps, O as getCurrentInstance, E as EventProp, I as IconValue, a5 as focusChild, a2 as consoleError, a3 as defineComponent$1, aa as defer, a6 as getPropertyFromItem, a7 as isPrimitive, a8 as omit, R as wrapInArray } from './server.mjs';
 import { s as createSimpleFunctional, a as useBorder, u as useBackgroundColor, c as useElevation, f as useRounded, P as useRouter, Q as toPhysical, O as VImg, r as VDefaultsProvider, o as useDensity, b as useDimension, R as Ripple, D as useLink, n as useVariant, q as genOverlays, E as VAvatar, V as VIcon, S as VExpandTransition, m as makeTagProps, g as makeRoundedProps, j as makeElevationProps, l as makeBorderProps, w as makeVariantProps, k as makeDimensionProps, x as makeDensityProps, G as makeRouterProps, p as useTextColor, M as MaybeTransition } from './index-D_XWh9S8.mjs';
-import { b as VContainer, V as VRow, a as VCol, c as VBtn, m as makeVBtnProps } from './VBtn-Bd1xqV3-.mjs';
+import { b as VContainer, V as VRow, a as VCol, c as VBtn, m as makeVBtnProps } from './VBtn-CEpaUE93.mjs';
 import '../_/nitro.mjs';
 import 'node:http';
 import 'node:https';
@@ -13,7 +13,6 @@ import 'node:fs';
 import 'node:url';
 import '@iconify/utils';
 import 'node:crypto';
-import 'node:module';
 import 'ipx';
 import 'node:path';
 import 'vue-router';
@@ -3057,7 +3056,8 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
                           default: withCtx((_4, _push5, _parent5, _scopeId4) => {
                             if (_push5) {
                               _push5(ssrRenderComponent(VCol, {
-                                cols: "10",
+                                cols: "12",
+                                sm: "10",
                                 lg: "8"
                               }, {
                                 default: withCtx((_5, _push6, _parent6, _scopeId5) => {
@@ -3074,7 +3074,8 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
                             } else {
                               return [
                                 createVNode(VCol, {
-                                  cols: "10",
+                                  cols: "12",
+                                  sm: "10",
                                   lg: "8"
                                 }, {
                                   default: withCtx(() => [
@@ -3092,7 +3093,8 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
                           createVNode(VRow, { justify: "center" }, {
                             default: withCtx(() => [
                               createVNode(VCol, {
-                                cols: "10",
+                                cols: "12",
+                                sm: "10",
                                 lg: "8"
                               }, {
                                 default: withCtx(() => [
@@ -3118,7 +3120,8 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
                         createVNode(VRow, { justify: "center" }, {
                           default: withCtx(() => [
                             createVNode(VCol, {
-                              cols: "10",
+                              cols: "12",
+                              sm: "10",
                               lg: "8"
                             }, {
                               default: withCtx(() => [
@@ -3306,7 +3309,8 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
                       createVNode(VRow, { justify: "center" }, {
                         default: withCtx(() => [
                           createVNode(VCol, {
-                            cols: "10",
+                            cols: "12",
+                            sm: "10",
                             lg: "8"
                           }, {
                             default: withCtx(() => [
@@ -3354,4 +3358,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=default-BLysStYR.mjs.map
+//# sourceMappingURL=default-CjHT6t9h.mjs.map

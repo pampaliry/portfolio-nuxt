@@ -59,7 +59,7 @@
     <v-main role="main">
       <v-container class="py-16" fluid>
         <v-row justify="center">
-          <v-col cols="10" lg="8">
+          <v-col cols="12" sm="10" lg="8">
             <NuxtPage />
           </v-col>
         </v-row>

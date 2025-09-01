@@ -5,7 +5,7 @@
     <v-card-title class="text-center d-flex justify-center align-center flex-wrap">
       <span class="d-inline-flex align-center">
         <HandWave style="font-size: 1.5rem; margin-right: 0.5rem;" />
-        <h1 aria-label="Hlavný nadpis stránky">Vitaj na mm-smart.eu</h1>
+        <h1 class="main-heading" aria-label="Hlavný nadpis stránky">Vitaj na mm-smart.eu</h1>
       </span>
     </v-card-title>
 

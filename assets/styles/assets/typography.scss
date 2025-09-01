@@ -1,9 +1,8 @@
 /* assets/styles/typography.scss */
 
-
 html {
   /* 1rem sa bude hýbať medzi 14px – 18px */
-  font-size: clamp(14px, 1.2vw + 10px, 18px);
+  font-size: clamp(10px, 1.2vw + 10px, 18px);
   -webkit-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
 }

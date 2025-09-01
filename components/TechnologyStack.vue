@@ -1,6 +1,6 @@
 <template>
     <v-row justify="center" class="mt-12">
-        <v-col cols="10" lg="8">
+        <v-col cols="12" lg="">
           <v-sheet class="pa-6 text-center" color="dark" rounded>
             <h2 class="text-h5 font-weight-medium mb-4" aria-label="Použité technológie">
               Použité technológie na tomto projekte
